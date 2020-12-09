@@ -4,7 +4,7 @@ This is my personal algorithms archives and it's where I store my algoritms rese
 
 - [Data Structures](#data-structures)
   - [Arrays](#arrays)
-    - [Code Examples](#examples)
+    - [Code Examples](#code-examples)
       - [Get products of all other elements](#get-products-of-all-other-elements)
       - [Locate smallest window to be sorted](#locate-smallest-window-to-be-sorted)
       - [Calculate maximum subarray sum](#calculate-maximum-subarray-sum)
@@ -29,9 +29,9 @@ This is my personal algorithms archives and it's where I store my algoritms rese
   - [Randomized Algorithms](#randomized-algorithms)
   - [Advanced Algorithms](#advanced-algorithms)
 
-## Data Structures
+# Data Structures
 
-### Arrays
+## Arrays
 
 Arrays are without a doubt the most fundamental data structure in computer science. Under the hood, an array is represented as a fixed-size, contiguous block of memory with `O(1)` time to store and access an element. Because of this efficiency, many other data structures frequently use arrays for their implementation, such as strings, stacks, queues, and hash tables.
 
@@ -49,15 +49,21 @@ Python does not have native support for arrays; typically, you'll use the `list`
 
 Given an array of integers, return a new array such that each element at index `i` of the new array is the product of all the numbers in the original array except the one at `i`.
 
+---
+
 #### Locate smallest window to be sorted
 
 Given an array of integers that are out of order, determine the bounds of the smallest window that must be sorted in order for the entire array to be sorted. For example, given `[3, 7, 5, 6, 9]`, you should return `(1, 3)`.
+
+---
 
 #### Calculate maximum subarray sum
 
 Given an array of numbers, find the maximum sum of any contiguous subarray of the array. For example, given the array `[34, -50, 42, 14, -5, 86]`, the maximum sum would be `137`, since we would take elements 42, 14, -5, and 86. Given the array `[-5, -1, -8, -9]`, the maximum sum would be `0`, since we would choose not to take any elements.
 
 Do this in `O(n)` time.
+
+---
 
 #### Find number of smaller elements to the right
 
@@ -71,40 +77,40 @@ For example, given the array `[3, 4, 9, 6, 1]`, return `[1, 1, 2, 1, 0]`, since:
 - There is 1 smaller element to the right of 6
 - There are no smaller elements to the right of 1
 
-### Strings
+## Strings
 
-### Linked Lists
+## Linked Lists
 
-### Stack and Queues
+## Stack and Queues
 
-### Hash Tables
+## Hash Tables
 
-### Trees
+## Trees
 
-### Binary Search
+## Binary Search
 
-### Tries
+## Tries
 
-### Heaps
+## Heaps
 
-### Graphs
+## Graphs
 
-### Advanced Data Structures
+## Advanced Data Structures
 
-## Algorithms
+# Algorithms
 
-### Recursion
+## Recursion
 
-### Dynamic Programming
+## Dynamic Programming
 
-### Backtracking
+## Backtracking
 
-### Sorting and Searching
+## Sorting and Searching
 
-### Pathfinding
+## Pathfinding
 
-### Bit Manipulation
+## Bit Manipulation
 
-### Randomized Algorithms
+## Randomized Algorithms
 
-### Advanced Algorithms
+## Advanced Algorithms
