@@ -10,7 +10,12 @@ This is my personal algorithms archives and it's where I store my algoritms rese
       - [Calculate maximum subarray sum](#calculate-maximum-subarray-sum)
       - [Find number of smaller elements to the right](#find-number-of-smaller-elements-to-the-right)
   - [Strings](#strings)
-  - [Linked Lists](#linked-lists)
+    - [Strings Code Examples](#strings-code-examples)
+      - [Find anagram indices](#find-anagram-indices)
+      - [Generate palindrome pairs](#generate-palindrome-pairs)
+      - [Print zigzap form](#print-zigzap-form)
+      - [Determine smallest rotated string](#determine-smallest-rotated-string)
+    - [Linked Lists](#linked-lists)
   - [Stack and Queues](#stack-and-queues)
   - [Hash Tables](#hash-tables)
   - [Trees](#trees)
@@ -78,6 +83,61 @@ For example, given the array `[3, 4, 9, 6, 1]`, return `[1, 1, 2, 1, 0]`, since:
 - There are no smaller elements to the right of 1
 
 ## Strings
+
+Strings are unavoidable part of programming. Every word in this sentence can be considered a string!
+
+Behind the scenes, the contents of a string are typically sotred in a read-only sequential array in memory, meaning that strings are immutable. In other words, you can reassign a string variable to a new value, but you cannot change a particular character in the underlying array.
+
+The most common operations perfomed on strings are indexing to get a particular character or substring, joining two strings together by concatenation, and splitting by a delimiter.
+
+Common cases of string questions:
+
+- string rotations
+- string reversals
+- prefixes
+- suffixes
+- sorting
+
+## Strings Code Examples
+
+### Find anagram indices
+
+Given a word `w`, and a string `s`, find all indices in `s` which are the starting locations of anagrams of `w`.
+
+For example, given `w` is `ab` and `s` is `abxaba`, return `[0, 3, 4]`.
+
+---
+
+### Generate palindrome pairs
+
+Given a list of words, find all pairs of unique indices such that the concatenation of the two words is a palindrome.
+
+For example, given the list `["code", "edoc", "da", "d"]` return `[(0, 1), (1, 0), (2, 3)]`.
+
+---
+
+### Print zigzap form
+
+Given a string and a number of lines k, print the string in zigzag form. In zigzag, characters are printed out diagonally from top left to bottom right until reaching the kth line, then back up to top right, and so on.
+
+For example, given the sentence "thisiszigzap", you should print:
+
+```
+t     a     g
+ h   s z   a
+  i i   i z
+   s     g
+```
+
+---
+
+### Determine smallest rotated string
+
+You are given a string of length n and an integer `k`. The stirng can be manipulated by taking one of the first `k` letters and moving it to the end of the string.
+
+Write a program to determine the lexicographically smallest string that can be created after an unlimitted number of moves.
+
+For example, suppose we are given the string daily and `k = 1`. The best we can create in this case is `ailyd`.
 
 ## Linked Lists
 
