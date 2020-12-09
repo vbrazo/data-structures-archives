@@ -1,4 +1,4 @@
-# Algorithms for Tech Interviews
+# Algorithms for Managers
 
 This is my personal algorithms archives and it's where I store my algoritms research that aims to provide resources to better interview developers in my engineering management journey.
 
