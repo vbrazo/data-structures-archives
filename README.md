@@ -15,7 +15,7 @@ This is my personal algorithms archives and it's where I store my algoritms rese
       - [Generate palindrome pairs](#generate-palindrome-pairs)
       - [Print zigzap form](#print-zigzap-form)
       - [Determine smallest rotated string](#determine-smallest-rotated-string)
-    - [Linked Lists](#linked-lists)
+  - [Linked Lists](#linked-lists)
   - [Stack and Queues](#stack-and-queues)
   - [Hash Tables](#hash-tables)
   - [Trees](#trees)
