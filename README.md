@@ -110,6 +110,8 @@ Given a word `w`, and a string `s`, find all indices in `s` which are the starti
 
 For example, given `w` is `ab` and `s` is `abxaba`, return `[0, 3, 4]`.
 
+- [Python](strings/python/find_anagram_indices.py)
+
 ---
 
 ### Generate palindrome pairs
