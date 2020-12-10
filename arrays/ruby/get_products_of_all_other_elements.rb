@@ -1,6 +1,4 @@
-# Arrays - Get Products of all other elements
-
-# Ruby implementation
+# Arrays - Get Products of all other elements in Ruby
 
 # Generates prefix products
 def build_prefix_products(nums)

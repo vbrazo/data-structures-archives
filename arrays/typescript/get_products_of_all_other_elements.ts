@@ -1,3 +1,6 @@
+// Arrays - Get Products of all other elements in Typescript
+
+// Generates prefix products
 function build_prefix_products(nums: Number[]) {
   var prefix_products: Number[] = []
   var i = 0
@@ -8,12 +11,14 @@ function build_prefix_products(nums: Number[]) {
     } else {
         prefix_products.push(Number(nums[i]))
     }
+
     i++
   }
 
   return prefix_products
 }
 
+// Generates suffix products
 function build_suffix_products(nums: Number[]) {
   var suffix_products: Number[] = []
   var i = 0
@@ -24,12 +29,14 @@ function build_suffix_products(nums: Number[]) {
     } else {
         suffix_products.push(nums[i])
     }
+
     i++
   }
 
   return suffix_products
 }
 
+// Builds output
 function output(prefix_products: Number[], suffix_products: Number[], nums: Number[]) {
   var result: Number[] = []
   var i = 0
@@ -42,12 +49,14 @@ function output(prefix_products: Number[], suffix_products: Number[], nums: Numb
     } else {
         result.push(Number(prefix_products[i - 1]) * Number(suffix_products[i + 1]))
     }
+
     i++
   }
 
   return result
 }
 
+// Generates result from the product of prefixes and suffixes
 function products(nums: Number[]) {
   var prefix_products: Number[] = build_prefix_products(nums)
   var suffix_products: Number[] = build_suffix_products(nums)
@@ -56,3 +65,4 @@ function products(nums: Number[]) {
 }
 
 console.log(products([1, 2, 3]))
+// => [6, 3, 2]
