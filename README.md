@@ -56,7 +56,7 @@ Given an array of integers, return a new array such that each element at index `
 
 - [Ruby](arrays/ruby/get_products_of_all_other_elements.rb)
 - [Python](arrays/python/get_products_of_all_other_elements.py)
-- [Typescript](arrays/Typescript/get_products_of_all_other_elements.ts)
+- [Typescript](arrays/typescript/get_products_of_all_other_elements.ts)
 
 ---
 
