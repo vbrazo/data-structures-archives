@@ -54,8 +54,9 @@ Python does not have native support for arrays; typically, you'll use the `list`
 
 Given an array of integers, return a new array such that each element at index `i` of the new array is the product of all the numbers in the original array except the one at `i`.
 
-- [Ruby implementation](arrays/ruby/get_products_of_all_other_elements.rb)
-- [Python implementation](arrays/python/get_products_of_all_other_elements.py)
+- [Ruby](arrays/ruby/get_products_of_all_other_elements.rb)
+- [Python](arrays/python/get_products_of_all_other_elements.py)
+- [Typescript](arrays/Typescript/get_products_of_all_other_elements.ts)
 
 ---
 
