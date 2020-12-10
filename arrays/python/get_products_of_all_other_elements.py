@@ -1,4 +1,4 @@
-# Python implementation
+# Arrays - Get Products of all other elements in Python
 
 # Generates prefix products
 def build_prefix_products(nums):
