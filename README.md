@@ -1,6 +1,6 @@
 # Algorithms for Managers
 
-This is my personal algorithms archives and it's where I store my algoritms research that aims to provide resources to better interview developers in my engineering management journey.
+This is my personal algorithms archives and it's where I store my algorithms research that aims to provide resources to better interview developers in my engineering management journey.
 
 - [Data Structures](#data-structures)
   - [Arrays](#arrays)
@@ -90,9 +90,9 @@ For example, given the array `[3, 4, 9, 6, 1]`, return `[1, 1, 2, 1, 0]`, since:
 
 Strings are unavoidable part of programming. Every word in this sentence can be considered a string!
 
-Behind the scenes, the contents of a string are typically sotred in a read-only sequential array in memory, meaning that strings are immutable. In other words, you can reassign a string variable to a new value, but you cannot change a particular character in the underlying array.
+Behind the scenes, the contents of a string are typically sorted in a read-only sequential array in memory, meaning that strings are immutable. In other words, you can reassign a string variable to a new value, but you cannot change a particular character in the underlying array.
 
-The most common operations perfomed on strings are indexing to get a particular character or substring, joining two strings together by concatenation, and splitting by a delimiter.
+The most common operations performed on strings are indexing to get a particular character or substring, joining two strings together by concatenation, and splitting by a delimiter.
 
 Common cases of string questions:
 
@@ -139,9 +139,9 @@ t     a     g
 
 ### Determine smallest rotated string
 
-You are given a string of length n and an integer `k`. The stirng can be manipulated by taking one of the first `k` letters and moving it to the end of the string.
+You are given a string of length n and an integer `k`. The string can be manipulated by taking one of the first `k` letters and moving it to the end of the string.
 
-Write a program to determine the lexicographically smallest string that can be created after an unlimitted number of moves.
+Write a program to determine the lexicographically smallest string that can be created after an unlimited number of moves.
 
 For example, suppose we are given the string daily and `k = 1`. The best we can create in this case is `ailyd`.
 
