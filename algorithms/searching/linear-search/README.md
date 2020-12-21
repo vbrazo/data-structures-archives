@@ -28,6 +28,10 @@ A full traverse takes O(n) in best, worst and average case.
 
 ## Linear search in a linked list
 
+Given a linked list, determine whether an element is present or not.
+
+- [Linear search in a linked list](c/linear_search_in_a_linked_list.c)
+
 ## Linear search in a binary tree
 
 ## Linear search in a graph
