@@ -74,7 +74,7 @@ Common cases of string questions:
 - suffixes
 - sorting
 
-## Code Examples
+### Code Examples
 
 - [Strings](#strings)
   - [Find anagram indices](strings/README.md)
