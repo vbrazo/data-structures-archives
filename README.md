@@ -53,10 +53,10 @@ Python does not have native support for arrays; typically, you'll use the `list`
 ### Code Examples
 
 - [Arrays](#arrays)
-  - [Get products of all other elements](arrays/README.md)
-  - [Locate smallest window to be sorted](arrays/README.md)
-  - [Calculate maximum subarray sum](arrays/README.md)
-  - [Find number of smaller elements to the right](arrays/README.md)
+  - [Get products of all other elements](data-structures/arrays/README.md)
+  - [Locate smallest window to be sorted](data-structures/arrays/README.md)
+  - [Calculate maximum subarray sum](data-structures/arrays/README.md)
+  - [Find number of smaller elements to the right](data-structures/arrays/README.md)
 
 ## Strings
 
@@ -77,10 +77,10 @@ Common cases of string questions:
 ### Code Examples
 
 - [Strings](#strings)
-  - [Find anagram indices](strings/README.md)
-  - [Generate palindrome pairs](strings/README.md)
-  - [Print zigzap form](strings/README.md)
-  - [Determine smallest rotated string](strings/README.md)
+  - [Find anagram indices](data-structures/strings/README.md)
+  - [Generate palindrome pairs](data-structures/strings/README.md)
+  - [Print zigzap form](data-structures/strings/README.md)
+  - [Determine smallest rotated string](data-structures/strings/README.md)
 
 ## Linked Lists
 
@@ -105,6 +105,24 @@ Common cases of string questions:
 ## Searching
 
 ### Linear Search
+
+Linear search is the simplest algorithm used to search sequentially in a collection. It traverses the given collection linearly and compare each element with value being searched until value is found and or we hit the end of collection.
+
+Only thing required is a logic to traverse given collection linearly. Some data structures like array, linked list, queue, stack, etc are sequential in the way they arrange data within themselves. Traversing such data structures linearly is natural and easy. For example, an array can be traversed linearly from either left-to-right or right-to-left, the sequence is deterministic and very intuitive. But if collection is a Binary tree, we can traverse the nodes sequentially in multiple ways, in-order, pre-order, post-order, level-order, reverse-level-order, etc.
+
+In this section, I'm reviewing different collection where we apply linear search algorithms.
+
+- [Linear Search](algorithms/linear-search/README.md)
+
+#### Linear search in an Array
+
+#### Linear search in a linked list
+
+#### Linear search in a binary tree
+
+#### Linear search in a graph
+
+#### Naive search in a string
 
 ### Binary Search
 

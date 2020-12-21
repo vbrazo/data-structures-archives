@@ -1,7 +1,5 @@
 # Arrays
 
-This is my personal algorithms archives and it's where I store my algorithms research that aims to provide resources to better interview developers in my engineering management journey.
-
 #### Get products of all other elements
 
 Given an array of integers, return a new array such that each element at index `i` of the new array is the product of all the numbers in the original array except the one at `i`.
