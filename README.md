@@ -21,7 +21,7 @@ This is my personal algorithms archives and it's where I store my algorithms res
     - [Other Search Algorithms](#other-search-algorithms)
   - [Sorting](#sorting)
     - [Introduction](#introduction)
-    - [Bubble & Selection Sort](#bubble-&-selection-sort)
+    - [Bubble and Selection Sort](#bubble-and-selection-sort)
     - [Insertion Sort](#insertion-sort)
     - [Quick Sort](#quick-sort)
     - [Merge Sort](#merge-sort)
@@ -114,7 +114,7 @@ Common cases of string questions:
 
 ### Introduction
 
-### Bubble & Selection Sort
+### Bubble and Selection Sort
 
 ### Insertion Sort
 
