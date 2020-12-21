@@ -11,12 +11,12 @@ Given an array of numbers `int` and a number `x`. Search for `x` in the array an
 
 We can traverse the array in either forward order starting with first element until the end or start with last element and move backward until we hit the first element.
 
-#### Linear search in an array
+## Linear search in an array
 
-#### Linear search in a linked list
+## Linear search in a linked list
 
-#### Linear search in a binary tree
+## Linear search in a binary tree
 
-#### Linear search in a graph
+## Linear search in a graph
 
-#### Naive search in a string
+## Naive search in a string
