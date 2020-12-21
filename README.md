@@ -84,6 +84,33 @@ Common cases of string questions:
 
 ## Linked Lists
 
+One way you can think of a linked list is a music playlist, where each item contains the song to be played and a "next song" button. In this abstract playlist, you cannot play any song you want; to play a given song you must play through all the songs before it first.
+
+There are two main kinds of linked lists. Singly linked lists only contain a pointer to the next node, typically called next, and are implemented as follows:
+
+```python
+class Node:
+  def __init___(self, data, next=None):
+    self.data = data
+    self.next = next
+```
+
+Linked lists are a recursive data structure: the type of next is another linked list node. Because of this, linked lists have no fixed size like arrays do: a new node can be initialized and appended to a linked list on the fly.
+
+Doubly linked lists, meanwhile, have pointers to the previous and next nodes. They take up more space, but allow you to traverse backwards. The implementation for a doubly linked list looks like this:
+
+```python
+class Node:
+  def __init__(self, data, next=None, prev=None):
+    self.data = data
+    self.next = next
+    self.prev = prev
+```
+
+Returning to the analogy above, a doubly linked list would mean that each song has both a "previous song" and "next song" button.
+
+Common operations on linked lists include searching, appending, prepending, and removing nodes.
+
 ## Stack and Queues
 
 ## Hash Tables
