@@ -112,17 +112,12 @@ Only thing required is a logic to traverse given collection linearly. Some data 
 
 In this section, I'm reviewing different collection where we apply linear search algorithms.
 
-- [Linear Search](algorithms/linear-search/README.md)
-
-#### Linear search in an Array
-
-#### Linear search in a linked list
-
-#### Linear search in a binary tree
-
-#### Linear search in a graph
-
-#### Naive search in a string
+- [Linear Search](algorithms/searching/linear-search/README.md)
+  - [Linear search in an Array](algorithms/searching/linear-search/README.md#linear-search-in-an-array)
+  - [Linear search in a linked list](algorithms/searching/linear-search/README.md#linear-search-in-a-linked-list)
+  - [Linear search in a binary tree](algorithms/searching/linear-search/README.md#linear-search-in-a-binary-tree)
+  - [Linear search in a graph](algorithms/searching/linear-search/README.md#linear-search-in-a-graph)
+  - [Naive search in a string](algorithms/searching/linear-search/README.md#naive-search-in-a-string)
 
 ### Binary Search
 
