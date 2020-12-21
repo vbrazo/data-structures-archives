@@ -4,17 +4,7 @@ This is my personal algorithms archives and it's where I store my algorithms res
 
 - [Data Structures](#data-structures)
   - [Arrays](#arrays)
-    - [Code Examples](#code-examples)
-      - [Get products of all other elements](#get-products-of-all-other-elements)
-      - [Locate smallest window to be sorted](#locate-smallest-window-to-be-sorted)
-      - [Calculate maximum subarray sum](#calculate-maximum-subarray-sum)
-      - [Find number of smaller elements to the right](#find-number-of-smaller-elements-to-the-right)
   - [Strings](#strings)
-    - [Strings Code Examples](#strings-code-examples)
-      - [Find anagram indices](#find-anagram-indices)
-      - [Generate palindrome pairs](#generate-palindrome-pairs)
-      - [Print zigzap form](#print-zigzap-form)
-      - [Determine smallest rotated string](#determine-smallest-rotated-string)
   - [Linked Lists](#linked-lists)
   - [Stack and Queues](#stack-and-queues)
   - [Hash Tables](#hash-tables)
@@ -25,10 +15,10 @@ This is my personal algorithms archives and it's where I store my algorithms res
   - [Graphs](#graphs)
   - [Advanced Data Structures](#advanced-data-structures)
 - [Algorithms](#algorithms)
+  - [Sorting and Searching](#sorting-and-searching)
   - [Recursion](#recursion)
   - [Dynamic Programming](#dynamic-programming)
   - [Backtracking](#backtracking)
-  - [Sorting and Searching](#sorting-and-searching)
   - [Pathfinding](#pathfinding)
   - [Bit Manipulation](#bit-manipulation)
   - [Randomized Algorithms](#randomized-algorithms)
@@ -50,41 +40,11 @@ Python does not have native support for arrays; typically, you'll use the `list`
 
 ### Code Examples
 
-#### Get products of all other elements
-
-Given an array of integers, return a new array such that each element at index `i` of the new array is the product of all the numbers in the original array except the one at `i`.
-
-- [Ruby](arrays/ruby/get_products_of_all_other_elements.rb)
-- [Python](arrays/python/get_products_of_all_other_elements.py)
-- [Typescript](arrays/typescript/get_products_of_all_other_elements.ts)
-
----
-
-#### Locate smallest window to be sorted
-
-Given an array of integers that are out of order, determine the bounds of the smallest window that must be sorted in order for the entire array to be sorted. For example, given `[3, 7, 5, 6, 9]`, you should return `(1, 3)`.
-
----
-
-#### Calculate maximum subarray sum
-
-Given an array of numbers, find the maximum sum of any contiguous subarray of the array. For example, given the array `[34, -50, 42, 14, -5, 86]`, the maximum sum would be `137`, since we would take elements 42, 14, -5, and 86. Given the array `[-5, -1, -8, -9]`, the maximum sum would be `0`, since we would choose not to take any elements.
-
-Do this in `O(n)` time.
-
----
-
-#### Find number of smaller elements to the right
-
-Given an array of integers, return a new array where each element in the new array is the number of smaller elements to the right of that element in the original input array.
-
-For example, given the array `[3, 4, 9, 6, 1]`, return `[1, 1, 2, 1, 0]`, since:
-
-- There is 1 smaller element to the right of 3
-- There is 1 smaller element to the right of 4
-- There is are smaller elements to the right of 9
-- There is 1 smaller element to the right of 6
-- There are no smaller elements to the right of 1
+- [Arrays](#arrays)
+  - [Get products of all other elements](arrays/README.md)
+  - [Locate smallest window to be sorted](arrays/README.md)
+  - [Calculate maximum subarray sum](arrays/README.md)
+  - [Find number of smaller elements to the right](arrays/README.md)
 
 ## Strings
 
@@ -102,48 +62,13 @@ Common cases of string questions:
 - suffixes
 - sorting
 
-## Strings Code Examples
+## Code Examples
 
-### Find anagram indices
-
-Given a word `w`, and a string `s`, find all indices in `s` which are the starting locations of anagrams of `w`.
-
-For example, given `w` is `ab` and `s` is `abxaba`, return `[0, 3, 4]`.
-
-- [Python](strings/python/find_anagram_indices.py)
-
----
-
-### Generate palindrome pairs
-
-Given a list of words, find all pairs of unique indices such that the concatenation of the two words is a palindrome.
-
-For example, given the list `["code", "edoc", "da", "d"]` return `[(0, 1), (1, 0), (2, 3)]`.
-
----
-
-### Print zigzap form
-
-Given a string and a number of lines k, print the string in zigzag form. In zigzag, characters are printed out diagonally from top left to bottom right until reaching the kth line, then back up to top right, and so on.
-
-For example, given the sentence "thisiszigzap", you should print:
-
-```
-t     a     g
- h   s z   a
-  i i   i z
-   s     g
-```
-
----
-
-### Determine smallest rotated string
-
-You are given a string of length n and an integer `k`. The string can be manipulated by taking one of the first `k` letters and moving it to the end of the string.
-
-Write a program to determine the lexicographically smallest string that can be created after an unlimited number of moves.
-
-For example, suppose we are given the string daily and `k = 1`. The best we can create in this case is `ailyd`.
+- [Strings](#strings)
+  - [Find anagram indices](strings/README.md)
+  - [Generate palindrome pairs](strings/README.md)
+  - [Print zigzap form](strings/README.md)
+  - [Determine smallest rotated string](strings/README.md)
 
 ## Linked Lists
 
@@ -165,13 +90,13 @@ For example, suppose we are given the string daily and `k = 1`. The best we can 
 
 # Algorithms
 
+## Sorting and Searching
+
 ## Recursion
 
 ## Dynamic Programming
 
 ## Backtracking
-
-## Sorting and Searching
 
 ## Pathfinding
 
