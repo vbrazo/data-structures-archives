@@ -13,6 +13,8 @@ We can traverse the array in either forward order starting with first element un
 
 ## Linear search in an array
 
+- [C](c/linear_search.c)
+
 ## Linear search in a linked list
 
 ## Linear search in a binary tree
