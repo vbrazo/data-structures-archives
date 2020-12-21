@@ -1,11 +1,10 @@
 # Strings
 
 - [Strings](#strings)
-  - [Strings Code Examples](#strings-code-examples)
-    - [Find anagram indices](#find-anagram-indices)
-    - [Generate palindrome pairs](#generate-palindrome-pairs)
-    - [Print zigzap form](#print-zigzap-form)
-    - [Determine smallest rotated string](#determine-smallest-rotated-string)
+  - [Find anagram indices](#find-anagram-indices)
+  - [Generate palindrome pairs](#generate-palindrome-pairs)
+  - [Print zigzap form](#print-zigzap-form)
+  - [Determine smallest rotated string](#determine-smallest-rotated-string)
 
 ### Find anagram indices
 
