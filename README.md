@@ -15,7 +15,19 @@ This is my personal algorithms archives and it's where I store my algorithms res
   - [Graphs](#graphs)
   - [Advanced Data Structures](#advanced-data-structures)
 - [Algorithms](#algorithms)
-  - [Sorting and Searching](#sorting-and-searching)
+  - [Searching](#searching)
+    - [Linear Search](#linear-search)
+    - [Binary Search](#binary-search)
+    - [Other Search Algorithms](#other-search-algorithms)
+  - [Sorting](#sorting)
+    - [Introduction](#introduction)
+    - [Bubble & Selection Sort](#bubble-&-selection-sort)
+    - [Insertion Sort](#insertion-sort)
+    - [Quick Sort](#quick-sort)
+    - [Merge Sort](#merge-sort)
+    - [Heap Sort](#heap-sort)
+    - [Non-Comparison Sorting](#non-comparison-sorting)
+    - [Last Word on Sorting](#last-word-on-sorting)
   - [Recursion](#recursion)
   - [Dynamic Programming](#dynamic-programming)
   - [Backtracking](#backtracking)
@@ -90,7 +102,31 @@ Common cases of string questions:
 
 # Algorithms
 
-## Sorting and Searching
+## Searching
+
+### Linear Search
+
+### Binary Search
+
+### Other Search Algorithms
+
+## Sorting
+
+### Introduction
+
+### Bubble & Selection Sort
+
+### Insertion Sort
+
+### Quick Sort
+
+### Merge Sort
+
+### Heap Sort
+
+### Non-Comparison Sorting
+
+### Last Word on Sorting
 
 ## Recursion
 
