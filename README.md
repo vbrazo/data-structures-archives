@@ -171,6 +171,49 @@ When the order of the items you are dealing with needs to be preserved, on the o
 
 ## Hash Tables
 
+A hash table is a crucial tool to keep in your data structure arsenal. Simply put, hash tables associate keys with values using a hash function, allowing for O(1) lookup, insert, and delete times.
+
+You may be wondering, what's the catch? For one, not everything can be hashed. It is necessary that keys be immutable, so for example Python lists cannot be used as keys. Additionally, under the hood there may be a lot of work needed to implement a rigorous hash function.
+
+```python
+d = {}
+
+d['key'] = 'value'
+print(d['key']) # 'value'
+
+del d['key']
+print(d['key']) # KeyError: 'key'
+
+if 'key' in d:
+  print(d['key'])
+else:
+  print("key doesn't exist")
+```
+
+Note from above that if a key does not exist in a dictionary, simply trying to get the value will cause a `KeyError`.
+
+The last few lines show one way of getting around this. In the solutions that follow, we will instead use the `defaultdict` library, which allows you pass in a callable parameter when declaring a dictionary to set the default value for each key.
+
+A common motivating example for using hash tables is the two-sum problem, stated as follows:
+
+Given a list of numbers a number `k`, return whether any two numbers from the list add up to k. For example, given `[10, 15, 3, 7]` and `k = 17`, we should return `10 + 7 = 17`.
+
+Instead of a brute force solution which checks all pairs of integers to search for this total, we can use the following strategy. For each value we come across, we store it in a hash table with the `True`. We then check if the `k - value` exists in the table, and if so we can return `True`.
+
+```python
+def two_sum(lst, k):
+  seen = {}
+  for num in lst:
+    if k - num in seen:
+      return True
+    seen[num] = True
+  return false
+```
+
+This implementation cuts our time complexity down from `O(n2)` to `O(n)`, since each lookup is `O(1)`.
+
+As the problem above demonstrates, if an interviewer asks you to make a solution more efficient, a dictionary  should be the first tool you look for.
+
 ## Trees
 
 ## Binary Search
