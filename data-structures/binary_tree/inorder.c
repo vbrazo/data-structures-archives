@@ -1,5 +1,5 @@
-#include<stdlib.h>
-#include<stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 struct bin_tree {
   int data;
@@ -90,7 +90,6 @@ void main()
     printf("In Order Display\n");
     print_inorder(root);
 
-    /* Search node into tree */
     tmp = search(&root, 4);
     if (tmp)
     {
@@ -101,6 +100,5 @@ void main()
         printf("Data Not found in tree.\n");
     }
 
-    /* Deleting all nodes of tree */
     deltree(root);
 }
