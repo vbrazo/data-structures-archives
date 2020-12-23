@@ -84,7 +84,7 @@ Common cases of string questions:
 
 ## Linked Lists
 
-One way you can think of a linked list is a music playlist, where each item contains the song to be played and a "next song" button. In this abstract playlist, you cannot play any song you want; to play a given song you must play through all the songs before it first.
+One way you can think of a linked list is a music playlist, where each item contains the song to be played and a `next song` button. In this abstract playlist, you cannot play any song you want; to play a given song you must play through all the songs before it first.
 
 There are two main kinds of linked lists. Singly linked lists only contain a pointer to the next node, typically called next, and are implemented as follows:
 
@@ -107,11 +107,67 @@ class Node:
     self.prev = prev
 ```
 
-Returning to the analogy above, a doubly linked list would mean that each song has both a "previous song" and "next song" button.
+Returning to the analogy above, a doubly linked list would mean that each song has both a `previous song` and `next song` button.
 
 Common operations on linked lists include searching, appending, prepending, and removing nodes.
 
 ## Stack and Queues
+
+When you find yourself needing to frequently add and remove items from a list, stacks and queues are two data structures that you should consider.
+
+To understand how a stack works, imagine a literal stack of cafeteria trays. Adding a new one to the top, and removing the top one can be done quickly, whereas it is difficult (read: not allowed) to change trays from the middle. This property is known by the shorthand `last in, first out`, or `LIFO`.
+
+The tradicional names for these operations, as well as a method for checking the value of the top `tray`, are given in the following implementation, in which all methods are `O(1)`:
+
+```python
+class Stack:
+  def __init__(self):
+    self.stack = []
+
+  def push(self, x):
+    # Add an item to the stack.
+    self.stack.append(x)
+
+  def pop(self):
+    # Remove and return the top element.
+    return self.stack.pop()
+
+  def peek(self):
+    return self.stack[-1]
+```
+
+Note that a pop operation on an empty stack will result in an exception, unless there is proper error handling.
+
+In the above implementation we have used a Python list as the underlying data structure, meaning the size of the stack will dynamically resize as necessary. Alternatively we could have used a linked list, so that new elements would be added to, and removed from, the tail of the existing chain.
+
+A queue, on the other hand, can be thought of as a group of people standing in line, perhaps waiting to buy a book. Each person enters the line from the back, and leaves in exactly the order that they entered it, a property known as `first in, first out`, or `FIFO`.
+
+Queues are commonly implemented as linked lists, where we enqueue and item by adding a tail node and dequeue an item by removing the head node and moving our head pointer forward.
+
+In a double-ended queue, one can efficiently append and remove items to either side of the list.
+
+```python
+from collection import deque
+
+queue = deque()
+
+queue.append(4)
+queue.append(5)
+queue.appendleft(6)
+
+print(queue)        # deque([6, 4, 5])
+
+queue.popleft()     # 6
+queue.pop()         # 5
+
+print(queue)        # deque([4])
+```
+
+The `append` and `popleft` operations above are more traditionally called enqueue and dequeue, so in the following questions we will frequently use the latter terminology. Along with pop and `appendleft`, these operations run in O(1) time.
+
+When the most recent item examined is the most important, a stack is frequently a good choice. For this reason stacks often feature in depth-first search, backtracking, and syntax parsing applications.
+
+When the order of the items you are dealing with needs to be preserved, on the other hand, a queue is preferable. Queues can be found, for example, in breadth-first search, buffers, and scheduling applications.
 
 ## Hash Tables
 
