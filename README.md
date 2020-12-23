@@ -9,7 +9,7 @@ This is my personal algorithms archives and it's where I store my algorithms res
   - [Stack and Queues](#stack-and-queues)
   - [Hash Tables](#hash-tables)
   - [Trees](#trees)
-  - [Binary Search](#binary-search)
+  - [Binary Search Trees](#binary-search-trees)
   - [Tries](#tries)
   - [Heaps](#heaps)
   - [Graphs](#graphs)
@@ -216,7 +216,60 @@ As the problem above demonstrates, if an interviewer asks you to make a solution
 
 ## Trees
 
-## Binary Search
+A tree is a recursive data structure consisting of a root node (typically shown at the top) with zero or more `child` nodes, where each child node acts as the root of a new tree.
+
+For example, below is a binary tree rooted at 7. Binary here means simply that each node is only allowed to have up to two `leaf` nodes.
+
+```
+  ->  5 -> -1
+7 -> 10 ->  4
+        -> 40
+```
+
+Note that we make no restriction at the moment as to the values of the tree.
+
+Trees are directed and acyclic: the connections between parents and children always flow downward, so that it is impossible to form a loop. Further, in contrast to a typical family tree, two parents can never have the same child.
+
+Common operations in tree involve:
+
+- inserting, searching for, and deleting a particular node
+- finding subtrees, or a subset of nodes that form their own tree
+- determining the distance or relationship between two nodes
+
+Typically to answer these questions you will need to perform a recursive tree traversal, which comes in three flavors:
+
+- in-order: Traverse left node, then current node, then right
+- pre-order: Traverse current node, then left node, then right
+- post-order: Traverse left node, then right node, then current
+
+For the tree above, for example, the three traversals would generate the following orders, respectively:
+
+- [4, 10, 40, 7, -1, 5]
+- [7, 10, 4, 40, 5, -1]
+- [4, 40, 10, -1, 5, 7]
+
+Other terminology to watch in trees:
+
+- A node A is called an `ancestor` of a node B if it can be found on the path from the root to B.
+- The height or depth of a tree is the length of the longest path from the root to any leaf.
+- A full binary tree is a binary tree in which every non-leaf node has exactly two children.
+- A complete binary tree is one in which all levels except for the bottom one are full, and all nodes on the bottom level are filled in left to right.
+
+To implement a tree, we begin by defining a Node class and then using it to build `Tree` class:
+
+```python
+class Node:
+  def __init__(self, data, left=None, right=None):
+    self.data = data
+    self.left = left
+    self.right = right
+```
+
+The implementation of a given tree will often depend on the tree's application, and the particular traversal algorithm chosen.
+
+Trees can represent a wide variety of objects: animal classification schemas, an HTML document object model, moves in a chess game, or a Linux file system are a few. In general when you are faced with hierarchical data, trees are a great data structure to choose.
+
+## Binary Search Trees
 
 ## Tries
 
