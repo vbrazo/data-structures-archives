@@ -219,11 +219,13 @@ A tree is a recursive data structure consisting of a root node (typically shown 
 
 For example, below is a binary tree rooted at 7. Binary here means simply that each node is only allowed to have up to two `leaf` nodes.
 
-```
-  ->  5 -> -1
-7 -> 10 ->  4
-        -> 40
-```
+<pre>
+  5 - -1
+ /
+7 - 10 - 4
+     \
+      40
+</pre>
 
 Note that we make no restriction at the moment as to the values of the tree.
 
@@ -272,11 +274,13 @@ Trees can represent a wide variety of objects: animal classification schemas, an
 
 A binary search tree, or BST, is a binary tree search whose node values are guaranteed to stay in sorted order; that is, an in-order traversal of its nodes will create a sorted list. For example, here is a BST of integers rooted at 7:
 
-```
-7 -> 5 -> -1
-7 -> 5 -> 6
-7 -> 10 -> 25
-```
+<pre>
+    6
+   /
+  5 - -1
+ /
+7 - 10 - 25
+</pre>
 
 Similar to how a sorted array offers more efficient search times over unsorted arrays, BSTs provide several improvements over standard binary trees.
 
@@ -338,6 +342,55 @@ The most common questions on binary search trees will ask you to search for elem
   - [Pre-order](data-structures/binary_tree/README.md)
 
 ## Tries
+
+A trie is a kind of tree whose nodes typically represent string, where every descendant of a node shares a common prefix. For this reason tries are often referred to as prefix trees.
+
+<pre>
+  d - o - g
+ /
+  - c - a - t
+ \   \
+  \   o - a - t
+   \
+    b - e - a - r
+</pre>
+
+Following all paths from the root to each leaf spells out all the words that this trie contains, in this case "bear", "cat, "coast", and "dog".
+There are two main methods used with tries:
+
+- insert(word): add a word to the trie
+- find(word): check if a word or prefix exists in the trie
+
+Each one of these methods will run O(k), where k is the length of the word.
+
+Tries can be implemented in several ways, but in an interview setting the simplest way is to use a nested dictionary, where each key maps to a dictionary whose keys are successive letters in a given word.
+
+Here is a basic implementation of a trie in Python:
+
+```python
+ENDS_HERE = '#'
+
+class Trie:
+  def __init__(self):
+    self._trie = {}
+
+  def insert(self, text):
+    trie = self._trie
+    for char in text:
+      if char not in trie:
+        trie[char] = {}
+      trie = trie[char]
+    trie[ENDS_HERE] = True
+
+  def find(self, prefix):
+    trie = self._trie
+    for char in prefix:
+      if char in trie:
+        trie = trie[char]
+      else:
+        return None
+    return trie
+```
 
 ## Heaps
 
