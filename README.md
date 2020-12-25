@@ -13,7 +13,6 @@ This is my personal algorithms archives and it's where I store my algorithms res
   - [Tries](#tries)
   - [Heaps](#heaps)
   - [Graphs](#graphs)
-  - [Advanced Data Structures](#advanced-data-structures)
 - [Algorithms](#algorithms)
   - [Searching](#searching)
     - [Linear Search](#linear-search)
@@ -271,13 +270,78 @@ Trees can represent a wide variety of objects: animal classification schemas, an
 
 ## Binary Search Trees
 
+A binary search tree, or BST, is a binary tree search whose node values are guaranteed to stay in sorted order; that is, an in-order traversal of its nodes will create a sorted list. For example, here is a BST of integers rooted at 7:
+
+```
+7 -> 5 -> -1
+7 -> 5 -> 6
+7 -> 10 -> 25
+```
+
+Similar to how a sorted array offers more efficient search times over unsorted arrays, BSTs provide several improvements over standard binary trees.
+
+In particular, insert, find, and delete operations all run in O(h) time, where h is the height of the tree. If an efficient implementation is used to maintain the height of the tree around O(log n), where n is the number of nodes, then these operations will be all be logarithmic in n.
+
+```python
+class Node:
+  def __init__(self, data, left=None, right=None):
+    self.data = data
+    self.left = left
+    self.right = right
+
+class BST:
+  def __init__(self):
+    self.root = None
+
+  def insert(self, x):
+    if not self.root:
+      self.root = Node(x)
+    else:
+      self._insert(x, self.root)
+
+  def _insert(self, x, root):
+    if x < root.data:
+      if not root.left:
+        root.left = Node(x)
+      else:
+        self.insert(x, root.left)
+    else:
+      if not root.right:
+        root.right = Node(x)
+      else:
+        self.insert(x, root.right)
+
+  def find(self, x):
+    if not self.root:
+      return False
+    else:
+      return self._find(x, self.root)
+
+  def _find(self, x, root):
+    if not root:
+      return False
+    elif x == root.data:
+      return True
+    elif x < root.data:
+      return self._find(x, root.left)
+    else:
+      return self._find(x, root.right)
+```
+
+Note that, as is common in recursive implementation, we use a helper function to properly define our insert and find methods.
+
+The most common questions on binary search trees will ask you to search for elements, add and remove elements, and determine whether a tree is indeed a BST.
+
+- [Strings](#strings)
+  - [In-order](data-structures/binary_tree/README.md)
+  - [Post-order](data-structures/binary_tree/README.md)
+  - [Pre-order](data-structures/binary_tree/README.md)
+
 ## Tries
 
 ## Heaps
 
 ## Graphs
-
-## Advanced Data Structures
 
 # Algorithms
 
