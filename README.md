@@ -394,6 +394,44 @@ class Trie:
 
 ## Heaps
 
+A heap is a tree that satisfied the (aptly named) heap property, which comes in two flavors:
+- In a max-heap, the parent node's value is always greater than or equal to its child node(s)
+- In a mix-heap, the parent node's value is always smaller than or equal to its child node(s)
+
+Note that, unlike with BSTs, it is possible for a left child to have a greater value (in the case of a min-heap) or for a right child to have a smaller value (in the case of a max-heap).
+
+While it is possible for parent nodes to have more than two children, almost all interview questions will deal with binary heaps, so we will make that assumption throughout the following problems. In the following explanation we will also assume that we are dealing with a min-heap, but the same principles apply for max-heaps.
+
+For example, here is a heap of integers:
+
+<pre>
+        31
+       /
+10 - 14 - 26
+ \
+  19 - 42
+</pre>
+
+We can represent a heap in a more space-efficient way by using an array. In this style, the two child nodes of a parent node located at index `i` can be found at indices `2i + 1` and `2i + 2`, like so:
+
+` 10 | 14 | 19 | 26 | 31 | 42 `
+
+When using an array to represent a heap, the heap must be filled in level by level, left to right.
+
+Whenever you are asked to find the top k or minimum k values, a heap should be the first thing that comes to mind. Heaps are closely tied to the heapsort sorting algorithm, priority queue implementations, and graph algorithms such as Dijkstra's algorithm, which we will explore in alter chapters.
+
+You should be familiar with the following heap operations:
+
+- insert(heap, x): add an element x to the heap, O(log n)
+- delete-min(heap): remove the lowest node, O(log n)
+- heapify(array): convert an array into a heap by repeated insertions, O(n log n)
+
+In the solutions that follow we will make use of Python's heapq module to implement the methods above. The corresponding operations are as follows:
+
+- heapq.heappush(heap, x)
+- heapq.heappop(heap)
+- heapq.heapify(array)
+
 ## Graphs
 
 # Algorithms
