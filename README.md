@@ -434,6 +434,104 @@ In the solutions that follow we will make use of Python's heapq module to implem
 
 ## Graphs
 
+Graphs are ones of the most important and widely used data structures. Website links, friend connections, and map routes all rely on graph representations, along with countless other applications.
+
+Formally, graphs are defined as a set of vertices connected by edges. If these edges go in one direction, the graph is said to be directed, otherwise it is undirected. Each edge can additionally be associated with a number that represents its "cost" and "benefit".
+
+An example fo directed graph would be followers on Twitter. Just because you follow Elon Musk does not mean he follows you back. On the other hand, friend connections on Facebook are undirected.
+
+Mathematicians working in a graph theory have names for many different graph concepts. We don't need of know all of them, but a few will be useful for the explanation that follow:
+
+- neighbor of X: any vertex connected to X by an edge
+- path: a route of edges that connects two vertices
+- cycle: a path that beings and end on the same vertex
+- direted acyclic graph (DAG): a directed graph that does not contain any cycles
+- connected graph: a graph in which there is always a path between any two vertices
+
+Another classic example is of a (directed) graph is airline routes. In the following diagram, we see that there are flights between JFK and SFO, ORL and LAX, and so on, and each one has an associated plane ticket cost. This graph has several cycles since it is indeed possible to start and end at JFK after following several edges.
+
+<pre>
+LAX -- DFW
+ | \    |
+ |  \   |
+ |   \  |
+JFK-- ORL
+ |    /
+ |   /
+ |  /
+ | /
+SFO
+</pre>
+
+Graphs can be represented in two main ways: adjacency lists and adjacency matrices.
+
+An adjacency list is essentially a dictionary mapping each vertex to the other vertices between which there is an edge. For the airline diagram above this would be as follows:
+
+```python
+{
+  'JFK': ['SFO', 'LAK'],
+  'SFO': ['ORL'],
+  'ORL': ['JFK', 'LAX', 'DFW'],
+  'LAX': ['DFW']
+}
+```
+
+On the other hand, in an adjacency matrix, each vertex is associated with a row and column of N x N matrix, and matrix[i][j] will be 1 if there is an edge from i to j, else 0.
+
+This would look like the following:
+
+```python
+indices = {
+  'JFK': 0,
+  'SFO': 1,
+  'ORL': 2,
+  'LAX': 3,
+  'DFW': 4
+}
+
+graph = [
+  [0, 1, 0, 1, 0],
+  [0, 0, 1, 0, 0],
+  [1, 0, 0, 1, 1],
+  [0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0]
+]
+```
+
+In general, the adjacency list representation is more space efficient if there are not that many edges (also knows as a sparse graph), whereas an adjacency matrix has faster lookup times to check if a given edge exists but uses more space.
+
+You should know the two main traversal methods for graphs: depth-first search (DFS) and breadth-first search (BFS).
+
+Below is a typical DFS implementation. Note the recursive aspect: for each vertex we visit, we call our function again on each of its neighbors.
+
+```python
+def DFS(graph, start, visited=set()):
+  visted.add(start)
+  for neighbor in graph[start]:
+    if neighbor not in visted:
+      DFS(graph, neighbor, visted)
+  return visited
+```
+
+BFS, on the other hand, relies on a queue. For each item that we pop off the queue, we find its unvisited neighbors and add them to the end of the queue.
+
+```python
+from collections import deque
+
+def BFS(graph, start, visited={}):
+  queue = deque([start])
+
+  while queue:
+    vertex = queue.popleft()
+    visited.add(vertex)
+    for neighbor in graph[vertex]:
+      if neighbor not in visited:
+        queue.append(neighbor)
+  return visited
+```
+
+Both of these of these algorithms run in O(V + E) time and O(V) space in the worst case.
+
 # Algorithms
 
 ## Searching
