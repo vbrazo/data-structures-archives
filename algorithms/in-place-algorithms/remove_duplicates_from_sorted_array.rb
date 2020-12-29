@@ -46,7 +46,10 @@ print("#{algo.output_arr}\n")
 # When we encounter nums[j] <> nums[i], the duplicate run has ended so we must copy
 # its value to nums[i + 1]. i is then incremented and we repeat the same
 # process again until j reaches the end of array.
-#
+
+# Time complextiy: O(n). Assume that n is the length of array. Each of i and j traverses at most n steps.
+# Space complexity: O(1).
+
 
 class InPlaceAlgorithm
   def remove_duplicates(nums)
@@ -54,7 +57,7 @@ class InPlaceAlgorithm
 
     i = 0
 
-    nums.each_with_index do |value, j|
+    nums.each_with_index do |_, j|
       if (nums[j] != nums[i])
         i = i + 1
 
