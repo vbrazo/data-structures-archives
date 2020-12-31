@@ -14,6 +14,7 @@ This is my personal algorithms archives and it's where I store my algorithms res
   - [Heaps](#heaps)
   - [Graphs](#graphs)
 - [Algorithms](#algorithms)
+  - [In-place Algorithm](#in-place-algorithm)
   - [Searching](#searching)
     - [Linear Search](#linear-search)
     - [Binary Search](#binary-search)
@@ -506,10 +507,10 @@ Below is a typical DFS implementation. Note the recursive aspect: for each verte
 
 ```python
 def DFS(graph, start, visited=set()):
-  visted.add(start)
+  visited.add(start)
   for neighbor in graph[start]:
-    if neighbor not in visted:
-      DFS(graph, neighbor, visted)
+    if neighbor not in visited:
+      DFS(graph, neighbor, visited)
   return visited
 ```
 
@@ -533,6 +534,12 @@ def BFS(graph, start, visited={}):
 Both of these of these algorithms run in O(V + E) time and O(V) space in the worst case.
 
 # Algorithms
+
+## In-place Algorithm
+
+An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. In-place algorithm updates input sequence only through replacement or swapping of elements. An algorithm which is not in-place is sometimes called not-in-place or out-of-place.
+
+Reference: https://en.wikipedia.org/wiki/In-place_algorithm
 
 ## Searching
 
