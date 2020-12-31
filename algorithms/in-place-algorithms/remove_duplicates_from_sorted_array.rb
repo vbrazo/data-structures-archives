@@ -55,17 +55,17 @@ class InPlaceAlgorithm
   def remove_duplicates(nums)
     return 0 if nums.length.zero?
 
-    i = 0
+    pointer1 = 0
 
     nums.each_with_index do |_, j|
-      if (nums[j] != nums[i])
-        i = i + 1
+      if (nums[pointer2] != nums[pointer1])
+        pointer1 = pointer1 + 1
 
-        nums[i] = nums[j] # swap values
+        nums[pointer1] = nums[pointer2] # swap values
       end
     end
 
-    i + 1
+    pointer1 + 1
   end
 end
 

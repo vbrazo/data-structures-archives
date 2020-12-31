@@ -17,17 +17,17 @@
 # Space complexity : O(1).
 
 def remove_element(nums, value)
-  i = 0
+  pointer1 = 0
 
-  nums.each_with_index do |val, j|
-    if (nums[j] != value)
-      nums[i] = nums[j]
-      i = i + 1
+  nums.each_with_index do |val, pointer2|
+    if (nums[pointer2] != value)
+      nums[pointer1] = nums[pointer2]
+      pointer1 = pointer1 + 1
     end
   end
 
   print("#{nums}\n")
-  i
+  pointer1
 end
 
 puts "First Example:"
