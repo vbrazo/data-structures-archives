@@ -40,7 +40,7 @@ def sorted_squares(nums)
   # This takes O(n)
   nums.map! { |num| num ** 2 }
 
-  # This can Ο(n2)
+  # This can take Ο(n2)
   bubble_sort(nums)
 end
 
