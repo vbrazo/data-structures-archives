@@ -4,7 +4,7 @@
 # 1. square of all elements
 # 2. sort the result
 
-# This guide contains 3 solutions:
+# This guide contains 2 solutions:
 # 1) uses Ruby functions
 # 2) uses bubble sorting
 
