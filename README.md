@@ -117,7 +117,7 @@ When you find yourself needing to frequently add and remove items from a list, s
 
 To understand how a stack works, imagine a literal stack of cafeteria trays. Adding a new one to the top, and removing the top one can be done quickly, whereas it is difficult (read: not allowed) to change trays from the middle. This property is known by the shorthand `last in, first out`, or `LIFO`.
 
-The tradicional names for these operations, as well as a method for checking the value of the top `tray`, are given in the following implementation, in which all methods are `O(1)`:
+The traditional names for these operations, as well as a method for checking the value of the top `tray`, are given in the following implementation, in which all methods are `O(1)`:
 
 ```python
 class Stack:
