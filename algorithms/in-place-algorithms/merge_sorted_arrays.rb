@@ -5,7 +5,15 @@
 # You may assume that nums1 has enough space (size that is equal to m + n)
 # to hold additional elements from nums2.
 
-# easist way to do this is using pure Ruby functions
+# Approach 1: The naive approach
+
+# would be to merge both lists into one and then to sort.
+# It can be a one line solution with a pretty bad time complexity O((n + m)log(n + m))
+# because here one doesn't profit from the fact that both arrays are already sorted.
+
+# Time complexit: O((n + m)log(n + m))
+# Space complexity: O(1)
+
 def merge(nums1, m, nums2, n)
   return nums1 if nums2.length == 0
 
@@ -31,3 +39,19 @@ n = 0
 
 merge(nums1, m, nums2, n)
 # => [1]
+
+#
+# Approach 2 : Two pointers / Start from the beginning
+
+# Typically, one could achieve O(n+m) time complexity in a sorted array(s) with the help of two pointers approach.
+# The straightforward implementation would be to set get pointer p1 in the beginning of nums1, p2 in the beginning of nums2, and push the smallest value in the output array at each step.
+# Since nums1 is an array used for output, one has to keep first m elements of nums1 somewhere aside, that means O(m) space complexity for this approach.
+
+
+
+
+# Approach 3 : Two pointers / Start from the end
+
+# Approach 2 already demonstrates the best possible time complexity O(n+m)
+# but still uses an additional space. This is because one has to keep somewhere
+# the elements of array nums1 while overwriting it starting from the beginning.
