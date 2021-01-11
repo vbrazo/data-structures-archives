@@ -16,7 +16,7 @@ This is my personal data structures archives and it's where I store my data stru
 
 # Data Structures
 
-![data-structures/data-structures.png]
+![data-structures/data-structures.png](data-structures/data-structures.png)
 
 ## Arrays
 
