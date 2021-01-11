@@ -16,6 +16,8 @@ This is my personal data structures archives and it's where I store my data stru
 
 # Data Structures
 
+![data-structures/data-structures.png]
+
 ## Arrays
 
 Arrays are without a doubt the most fundamental data structure in computer science. Under the hood, an array is represented as a fixed-size, contiguous block of memory with `O(1)` time to store and access an element. Because of this efficiency, many other data structures frequently use arrays for their implementation, such as strings, stacks, queues, and hash tables.
