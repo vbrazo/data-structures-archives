@@ -1,4 +1,4 @@
-# Data Structures for Managers
+# Data Structures Archives
 
 This is my personal data structures archives and it's where I store my data structures research that aims to provide resources to better interview developers in my engineering management journey.
 
