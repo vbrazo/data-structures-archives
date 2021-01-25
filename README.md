@@ -30,14 +30,6 @@ Finally, arrays have a fixed bound, which means that they may not be suitable fo
 
 Python does not have native support for arrays; typically, you'll use the `list` data structure, which dynamically resizes under the hood. What this means is that you, the developer, it seems like the list is unbounded. In reality, as the list grows, the data structure may allocate a larger (typically twice the current size) array, copy of its elements to the larger one, and then use that as the underlying array.
 
-### Code Examples
-
-- [Arrays](#arrays)
-  - [Get products of all other elements](data-structures/arrays/README.md)
-  - [Locate smallest window to be sorted](data-structures/arrays/README.md)
-  - [Calculate maximum subarray sum](data-structures/arrays/README.md)
-  - [Find number of smaller elements to the right](data-structures/arrays/README.md)
-
 ## Strings
 
 Strings are unavoidable part of programming. Every word in this sentence can be considered a string!
@@ -53,14 +45,6 @@ Common cases of string questions:
 - prefixes
 - suffixes
 - sorting
-
-### Code Examples
-
-- [Strings](#strings)
-  - [Find anagram indices](data-structures/strings/README.md)
-  - [Generate palindrome pairs](data-structures/strings/README.md)
-  - [Print zigzap form](data-structures/strings/README.md)
-  - [Determine smallest rotated string](data-structures/strings/README.md)
 
 ## Linked Lists
 
