@@ -12,7 +12,7 @@ def build_prefix_products(nums)
     end
   end
 
-  return prefix_products
+  prefix_products
 end
 
 # Generates suffix products
@@ -27,14 +27,14 @@ def build_suffix_products(nums)
     end
   end
 
-  return suffix_products
+  suffix_products
 end
 
 # Builds output
 def output(prefix_products, suffix_products, nums)
   result = []
 
-  nums.reverse.each_with_index do |num, index|
+  nums.reverse.each_with_index do |_num, index|
     if index == 0
       result.append(suffix_products[index + 1])
     elsif index == nums.length - 1
@@ -44,7 +44,7 @@ def output(prefix_products, suffix_products, nums)
     end
   end
 
-  return result
+  result
 end
 
 # Generate result from the product of prefixes and suffixes
@@ -53,7 +53,7 @@ def products(nums)
   suffix_products = build_suffix_products(nums)
   suffix_products = suffix_products.reverse
 
-  return output(prefix_products, suffix_products, nums)
+  output(prefix_products, suffix_products, nums)
 end
 
 puts(products([1, 2, 3]))
