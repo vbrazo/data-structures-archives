@@ -61,13 +61,15 @@ def preorder_traversal(root)
 
   stack = [root]
   results = []
+
   until stack.empty?
     current_node = stack.pop
-    results.push current_node.val
+    results.push(current_node.val)
 
-    stack.push current_node.right if current_node.right
-    stack.push current_node.left if current_node.left
+    stack.push(current_node.right) if current_node.right
+    stack.push(current_node.left) if current_node.left
   end
+
   results
 end
 
@@ -76,10 +78,10 @@ end
 # @param {TreeNode} root
 # @return {Array[]}
 def preorder_traversal(root)
-    ans = []
-    return ans if root == nil
-    ans << root.val << preorder_traversal(root.left) << preorder_traversal(root.right)
-    ans.flatten
+  ans = []
+  return ans if root == nil
+  ans << root.val << preorder_traversal(root.left) << preorder_traversal(root.right)
+  ans.flatten
 end
 
 # Approach 3: Morris traversal
