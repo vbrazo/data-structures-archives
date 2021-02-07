@@ -15,6 +15,17 @@
 # Input: root = [1,null,2]
 # Output: [1,2]
 
+# Definition for a binary tree node.
+class TreeNode
+  attr_accessor :val, :left, :right
+
+  def initialize(val = 0, left = nil, right = nil)
+    @val = val
+    @left = left
+    @right = right
+  end
+end
+
 # There are two general strategies to traverse a tree:
 
 # Breadth First Search (BFS)
@@ -42,6 +53,9 @@
 # therefore, the space complexity is `O(N)`.
 
 # Approach 1: Iterative
+
+# @param {TreeNode} root
+# @return {Integer[]}
 def preorder_traversal(root)
   return [] if root.nil?
 
@@ -59,6 +73,8 @@ end
 
 # Approach 2: Recursive Ruby Solution
 
+# @param {TreeNode} root
+# @return {Array[]}
 def preorder_traversal(root)
     ans = []
     return ans if root == nil
@@ -93,6 +109,8 @@ end
 # Space complexity: we use no additional memory for the computation itself,
 # but output list contains N elements, and thus space complexity is O(N).
 
+# @param {TreeNode} root
+# @return {Array[]}
 def preorder_traversal(root)
   result = []
   iterator = root
