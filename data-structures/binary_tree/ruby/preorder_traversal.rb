@@ -52,9 +52,9 @@ end
 # Space complexity: depending on the tree structure, we could keep up to the entire tree,
 # therefore, the space complexity is `O(N)`.
 
-# 
+#
 # Approach 1: Iterative
-# 
+#
 
 # @param {TreeNode} root
 # @return {Integer[]}
@@ -75,21 +75,22 @@ def preorder_traversal(root)
   results
 end
 
-# 
+#
 # Approach 2: Recursive Ruby Solution
-# 
+#
 # @param {TreeNode} root
 # @return {Array[]}
 def preorder_traversal(root)
   ans = []
-  return ans if root == nil
+  return ans if root.nil?
+
   ans << root.val << preorder_traversal(root.left) << preorder_traversal(root.right)
   ans.flatten
 end
 
-# 
+#
 # Approach 3: Morris traversal
-# 
+#
 # This approach is based on Morris's article which is intended to optimize the space
 # complexity. The algorithm does not use additional space for the computation, and
 # the memory is only used to keep the output. If one prints the output directly
@@ -120,7 +121,7 @@ end
 def preorder_traversal(root)
   result = []
   iterator = root
-  while iterator do
+  while iterator
     if iterator.left.nil?
       result << iterator.val
       iterator = iterator.right
@@ -142,8 +143,6 @@ end
 def find_predecessor(node)
   current_node = node
   node = node.left
-  while node.right and node.right != current_node do
-    node = node.right
-  end
+  node = node.right while node.right && (node.right != current_node)
   node
 end

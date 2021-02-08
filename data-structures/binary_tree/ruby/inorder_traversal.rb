@@ -26,9 +26,10 @@
 # @return {Integer[]}
 def inorder_traversal(root)
   curr = root
-  stack, res = [], []
+  stack = []
+  res = []
 
-  while !(curr.nil? and stack.empty?)
+  until curr.nil? && stack.empty?
     while curr
       stack.push(curr)
       curr = curr.left
@@ -38,7 +39,7 @@ def inorder_traversal(root)
     curr = curr.right
   end
 
-  return res
+  res
 end
 
 # Approach 2: Recursive
@@ -56,7 +57,7 @@ end
 def inorder_traversal_recursive(root)
   response = []
   traverse(root, response)
-  return response
+  response
 end
 
 def traverse(node, response)
@@ -88,7 +89,7 @@ end
 def inorder_traversal(root)
   result = []
   iterator = root
-  while iterator do
+  while iterator
     if iterator.left.nil?
       result << iterator.val
       iterator = iterator.right
@@ -110,8 +111,6 @@ end
 def find_predecessor(node)
   current_node = node
   node = node.left
-  while node.right and node.right != current_node do
-    node = node.right
-  end
+  node = node.right while node.right && (node.right != current_node)
   node
 end
