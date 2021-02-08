@@ -15,7 +15,7 @@
 # Input: root = [1,null,2]
 # Output: [1,2]
 
-# Approach 1: Iterative approach
+# Approach 1: Iterative
 
 # Complexity Analysis
 
