@@ -44,7 +44,7 @@ def postorder_traversal(root)
   array = []
   stack = [root]
 
-  while not stack.empty? do
+  until stack.empty?
     node = stack.pop
     array.unshift(node.val)
 
@@ -68,14 +68,15 @@ end
 # @param {TreeNode} root
 # @return {Integer[]}
 def postorder_traversal(root)
-    return [] if root.nil?
-    values = []
-    traversal(root,values)
-    return values
+  return [] if root.nil?
+
+  values = []
+  traversal(root, values)
+  values
 end
 
-def traversal(root,values)
-    traversal(root.left,values) if root.left
-    traversal(root.right,values) if root.right
-    values << root.val
+def traversal(root, values)
+  traversal(root.left, values) if root.left
+  traversal(root.right, values) if root.right
+  values << root.val
 end
