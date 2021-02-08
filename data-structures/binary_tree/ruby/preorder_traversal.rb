@@ -52,7 +52,9 @@ end
 # Space complexity: depending on the tree structure, we could keep up to the entire tree,
 # therefore, the space complexity is `O(N)`.
 
+# 
 # Approach 1: Iterative
+# 
 
 # @param {TreeNode} root
 # @return {Integer[]}
@@ -73,8 +75,9 @@ def preorder_traversal(root)
   results
 end
 
+# 
 # Approach 2: Recursive Ruby Solution
-
+# 
 # @param {TreeNode} root
 # @return {Array[]}
 def preorder_traversal(root)
@@ -84,8 +87,9 @@ def preorder_traversal(root)
   ans.flatten
 end
 
+# 
 # Approach 3: Morris traversal
-
+# 
 # This approach is based on Morris's article which is intended to optimize the space
 # complexity. The algorithm does not use additional space for the computation, and
 # the memory is only used to keep the output. If one prints the output directly
