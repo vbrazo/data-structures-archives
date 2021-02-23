@@ -135,7 +135,7 @@ When the order of the items you are dealing with needs to be preserved, on the o
 
 ## Hash Tables
 
-A hash table is a crucial tool to keep in your data structure arsenal. Simply put, hash tables associate keys with values using a hash function, allowing for O(1) lookup, insert, and delete times.
+A hash table is a crucial tool to keep in your data structure arsenal. Simply put, hash tables associate keys with values using a hash function, allowing for `O(1)` lookup, insert, and delete times.
 
 You may be wondering, what's the catch? For one, not everything can be hashed. It is necessary that keys be immutable, so for example Python lists cannot be used as keys. Additionally, under the hood there may be a lot of work needed to implement a rigorous hash function.
 
@@ -165,9 +165,9 @@ Given a list of numbers a number `k`, return whether any two numbers from the li
 Instead of a brute force solution which checks all pairs of integers to search for this total, we can use the following strategy. For each value we come across, we store it in a hash table with the `True`. We then check if the `k - value` exists in the table, and if so we can return `True`.
 
 ```python
-def two_sum(lst, k):
+def two_sum(list, k):
   seen = {}
-  for num in lst:
+  for num in list:
     if k - num in seen:
       return True
     seen[num] = True
@@ -176,7 +176,7 @@ def two_sum(lst, k):
 
 This implementation cuts our time complexity down from `O(n2)` to `O(n)`, since each lookup is `O(1)`.
 
-As the problem above demonstrates, if an interviewer asks you to make a solution more efficient, a dictionary  should be the first tool you look for.
+As the problem above demonstrates, if an interviewer asks you to make a solution more efficient, a dictionary should be the first tool you look for.
 
 ## Trees
 
@@ -249,7 +249,7 @@ A binary search tree, or BST, is a binary tree search whose node values are guar
 
 Similar to how a sorted array offers more efficient search times over unsorted arrays, BSTs provide several improvements over standard binary trees.
 
-In particular, insert, find, and delete operations all run in O(h) time, where h is the height of the tree. If an efficient implementation is used to maintain the height of the tree around O(log n), where n is the number of nodes, then these operations will be all be logarithmic in n.
+In particular, insert, find, and delete operations all run in `O(h)` time, where h is the height of the tree. If an efficient implementation is used to maintain the height of the tree around `O(log n)`, where n is the number of nodes, then these operations will be all be logarithmic in n.
 
 ```python
 class Node:
@@ -387,11 +387,11 @@ Whenever you are asked to find the top k or minimum k values, a heap should be t
 
 You should be familiar with the following heap operations:
 
-- insert(heap, x): add an element x to the heap, O(log n)
-- delete-min(heap): remove the lowest node, O(log n)
-- heapify(array): convert an array into a heap by repeated insertions, O(n log n)
+- insert(heap, x): add an element x to the heap, `O(log n)`
+- delete-min(heap): remove the lowest node, `O(log n)`
+- heapify(array): convert an array into a heap by repeated insertions, `O(n log n)`
 
-In the solutions that follow we will make use of Python's heapq module to implement the methods above. The corresponding operations are as follows:
+In the solutions that follow we will make use of Python's `heapq` module to implement the methods above. The corresponding operations are as follows:
 
 - heapq.heappush(heap, x)
 - heapq.heappop(heap)
@@ -441,7 +441,7 @@ An adjacency list is essentially a dictionary mapping each vertex to the other v
 }
 ```
 
-On the other hand, in an adjacency matrix, each vertex is associated with a row and column of N x N matrix, and matrix[i][j] will be 1 if there is an edge from i to j, else 0.
+On the other hand, in an adjacency matrix, each vertex is associated with a row and column of N x N matrix, and `matrix[i][j]` will be 1 if there is an edge from i to j, else 0.
 
 This would look like the following:
 
@@ -495,4 +495,4 @@ def BFS(graph, start, visited={}):
   return visited
 ```
 
-Both of these of these algorithms run in O(V + E) time and O(V) space in the worst case.
+Both of these of these algorithms run in `O(V + E)` time and `O(V)` space in the worst case.
