@@ -207,14 +207,15 @@ hashset.remove(2)
 
 # 4. check if the key is in the hash set
 if (2 not in hashset):
-    print("Key 2 is not in the hash set.")
+  print("Key 2 is not in the hash set.")
 
 # 5. get the size of the hash set
 print("Size of hashset is:", len(hashset))
 
 # 6. iterate the hash set
 for x in hashset:
-    print(x, end=" ")
+  print(x, end=" ")
+
 print("are in the hash set.")
 
 # 7. clear the hash set
@@ -269,7 +270,7 @@ del hashmap[2]
 
 # 5. check if a key is in the hash map
 if 2 not in hashmap:
-    print("Key 2 is not in the hash map.")
+  print("Key 2 is not in the hash map.")
 
 # 6. both key and value can have different type in a hash map
 hashmap["pi"] = 3.1415
@@ -279,7 +280,8 @@ print("The size of hash map is: " + str(len(hashmap)))
 
 # 8. iterate the hash map
 for key in hashmap:
-    print("(" + str(key) + "," + str(hashmap[key]) + ")", end=" ")
+  print("(" + str(key) + "," + str(hashmap[key]) + ")", end=" ")
+
 print("are in the hash map.")
 
 # 9. get all keys in hash map
@@ -337,7 +339,7 @@ ReturnType aggregateByKey_hashmap(vector<Type>& keys) {
 
 Another frequent scenario is to `aggregate all the information by key`. We can also use a hash map to achieve this goal.
 
-##### An Example
+##### Example
 
 Here is an example:
 
@@ -380,7 +382,7 @@ ReturnType aggregateByKey_hashmap(List<Type>& keys) {
 
 In the previous problems, the choice of key is comparatively straightforward. Unfortunately, sometimes you have to think it over to `design a suitable key` when using a hash table.
 
-##### An Example
+##### Example
 
 Let's look at an example:
 
