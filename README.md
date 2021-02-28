@@ -8,6 +8,8 @@ This is my personal data structures archives and it's where I store my data stru
   - [Linked Lists](#linked-lists)
   - [Stack and Queues](#stack-and-queues)
   - [Hash Tables](#hash-tables)
+    - [Hash Set](#hash-set)
+    - [Hash Map](#hash-map)
   - [Trees](#trees)
   - [Binary Search Trees](#binary-search-trees)
   - [Tries](#tries)
@@ -135,7 +137,7 @@ When the order of the items you are dealing with needs to be preserved, on the o
 
 ## Hash Tables
 
-A hash table is a crucial tool to keep in your data structure arsenal. Simply put, hash tables associate keys with values using a hash function, allowing for `O(1)` lookup, insert, and delete times.
+A hash table is a crucial tool to keep in your data structure arsenal. Simply put, hash tables associate keys with values using a hash function, allowing for `O(1)` lookup, insert, and delete times. Hash Table is a data structure which organizes data using hash functions in order to support quick insertion and search.
 
 You may be wondering, what's the catch? For one, not everything can be hashed. It is necessary that keys be immutable, so for example Python lists cannot be used as keys. Additionally, under the hood there may be a lot of work needed to implement a rigorous hash function.
 
@@ -176,7 +178,203 @@ def two_sum(list, k):
 
 This implementation cuts our time complexity down from `O(n2)` to `O(n)`, since each lookup is `O(1)`.
 
-As the problem above demonstrates, if an interviewer asks you to make a solution more efficient, a dictionary should be the first tool you look for.
+As the problem above demonstrates, if you want to make a solution more efficient, a dictionary should be the first tool you look for.
+
+There are two different kinds of hash tables: hash set and hash map.
+
+1. The hash set is one of the implementations of a set data structure to store no repeated values.
+2. The hash map is one of the implementations of a map data structure to store (key, value) pairs.
+
+By choosing a proper hash function, the hash table can achieve wonderful performance in both insertion and search.
+
+It is an open problem to design a hash function. The idea is to try to assign the key to the bucket as uniform as you can. Ideally, a perfect hash function will be a one-one mapping between the key and the bucket. However, in most cases a hash function is not perfect and it is a tradeoff between the amount of buckets and the capacity of a bucket.
+
+### Hash Set
+
+The `hash set` is one of the implementations of a `set` which is a data structure to store `no repeated values`.
+
+```python
+# 1. initialize the hash set
+hashset = set()
+
+# 2. add a new key
+hashset.add(3)
+hashset.add(2)
+hashset.add(1)
+
+# 3. remove a key
+hashset.remove(2)
+
+# 4. check if the key is in the hash set
+if (2 not in hashset):
+    print("Key 2 is not in the hash set.")
+
+# 5. get the size of the hash set
+print("Size of hashset is:", len(hashset))
+
+# 6. iterate the hash set
+for x in hashset:
+    print(x, end=" ")
+print("are in the hash set.")
+
+# 7. clear the hash set
+hashset.clear()
+print("Size of hashset:", len(hashset))
+```
+
+An Example. Let's look at an example:
+
+Given an array of integers, find if the array contains any duplicates.
+
+This is a typical problem which can be solved by a hash set.
+
+You can simply iterate each value and insert the value into the set. If a value has already been in the hash set, there is a duplicate.
+
+```java
+/*
+ * Template for using hash set to find duplicates.
+ */
+boolean findDuplicates(List<Type> keys) {
+  // Replace Type with actual type of your key
+  Set<Type> hashset = new HashSet<>();
+
+  for (Type key : keys) {
+    if (hashset.contains(key)) {
+      return true;
+    }
+    hashset.add(key);
+  }
+
+  return false;
+}
+```
+
+### Hash Map
+
+The hash map is one of the implementations of a `map` which is used to store `(key, value)` pairs.
+
+```python
+# 1. initialize a hash map
+hashmap = {0 : 0, 2 : 3}
+
+# 2. insert a new (key, value) pair or update the value of existed key
+hashmap[1] = 1
+hashmap[1] = 2
+
+# 3. get the value of a key
+print("The value of key 1 is: " + str(hashmap[1]))
+
+# 4. delete a key
+del hashmap[2]
+
+# 5. check if a key is in the hash map
+if 2 not in hashmap:
+    print("Key 2 is not in the hash map.")
+
+# 6. both key and value can have different type in a hash map
+hashmap["pi"] = 3.1415
+
+# 7. get the size of the hash map
+print("The size of hash map is: " + str(len(hashmap)))
+
+# 8. iterate the hash map
+for key in hashmap:
+    print("(" + str(key) + "," + str(hashmap[key]) + ")", end=" ")
+print("are in the hash map.")
+
+# 9. get all keys in hash map
+print(hashmap.keys())
+
+# 10. clear the hash map
+hashmap.clear();
+print("The size of hash map is: " + str(len(hashmap)))
+```
+
+#### Scenario I - Provide more information
+
+The first scenario to use a hash map is that we `need more information` rather than only the key. Then we can `build a mapping relationship between key and information` by hash map.
+
+#### An Example
+
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+In this example, if we only want to return true if there is a solution, we can use a hash set to store all the values when we iterate the array and check if `target - current_value` is in the hash set or not.
+
+However, we are asked to `return more information` which means we not only care about the value but also care about the index. We need to store not only the number as the key but also the index as the value. Therefore, we should use a hash map rather than a hash set.
+
+#### What's More
+
+In some cases, we need more information not just to return more information but also to help us with our decisions.
+
+In the previous examples, when we meet a duplicated key, we will return the corresponding information immediately. But sometimes, we might want to check if the value of the key is acceptable first.
+
+#### Template
+
+Here we provide a template for you to solve this kind of problems:
+
+```c++
+/*
+ * Template for using hash map to find duplicates.
+ * Replace ReturnType with the actual type of your return value.
+ */
+ReturnType aggregateByKey_hashmap(vector<Type>& keys) {
+  // Replace Type and InfoType with actual type of your key and value
+  unordered_map<Type, InfoType> hashtable;
+  for (Type key : keys) {
+    if (hashmap.count(key) > 0) {
+      if (hashmap[key] satisfies the requirement) {
+        return needed_information;
+      }
+    }
+    // Value can be any information you needed (e.g. index)
+    hashmap[key] = value;
+  }
+  return needed_information;
+}
+```
+
+#### Scenario II - Aggregate by Key
+
+Another frequent scenario is to `aggregate all the information by key`. We can also use a hash map to achieve this goal.
+
+##### An Example
+
+Here is an example:
+
+Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+
+A simple way to solve this problem is to `count the occurrence` of each character first. And then go through the results to find out the first unique character.
+
+Therefore, we can maintain a hashmap whose key is the character while the value is a counter for the corresponding character. Each time when we iterate a character, we just add the corresponding value by 1.
+
+##### What's more
+
+The key to solving this kind of problem is to `decide your strategy when you encounter an existing key`.
+
+In the example above, our strategy is to count the occurrence. Sometimes, we might sum all the values up. And sometimes, we might replace the original value with the newest one. The strategy depends on the problem and practice will help you make a right decision.
+
+##### Template
+
+Here we provide a template for you to solve this kind of problems:
+
+```java
+/*
+ * Template for using hash map to find duplicates.
+ * Replace ReturnType with the actual type of your return value.
+ */
+ReturnType aggregateByKey_hashmap(List<Type>& keys) {
+  // Replace Type and InfoType with actual type of your key and value
+  Map<Type, InfoType> hashmap = new HashMap<>();
+  for (Type key : keys) {
+    if (hashmap.containsKey(key)) {
+      hashmap.put(key, updated_information);
+    }
+    // Value can be any information you needed (e.g. index)
+    hashmap.put(key, value);
+  }
+  return needed_information;
+}
+```
 
 ## Trees
 
