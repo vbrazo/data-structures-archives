@@ -180,10 +180,10 @@ This implementation cuts our time complexity down from `O(n2)` to `O(n)`, since 
 
 As the problem above demonstrates, if you want to make a solution more efficient, a dictionary should be the first tool you look for.
 
-There are two different kinds of hash tables: hash set and hash map.
+There are two different kinds of hash tables: `hash set` and `hash map`.
 
-1. The hash set is one of the implementations of a set data structure to store no repeated values.
-2. The hash map is one of the implementations of a map data structure to store (key, value) pairs.
+1. The **hash set** is one of the implementations of a set data structure to store no repeated values.
+2. The **hash map** is one of the implementations of a map data structure to store `(key, value)` pairs.
 
 By choosing a proper hash function, the hash table can achieve wonderful performance in both insertion and search.
 
@@ -222,9 +222,9 @@ hashset.clear()
 print("Size of hashset:", len(hashset))
 ```
 
-An Example. Let's look at an example:
+#### An Example
 
-Given an array of integers, find if the array contains any duplicates.
+> Given an array of integers, find if the array contains any duplicates.
 
 This is a typical problem which can be solved by a hash set.
 
@@ -296,7 +296,7 @@ The first scenario to use a hash map is that we `need more information` rather t
 
 #### An Example
 
-Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+> Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
 In this example, if we only want to return true if there is a solution, we can use a hash set to store all the values when we iterate the array and check if `target - current_value` is in the hash set or not.
 
