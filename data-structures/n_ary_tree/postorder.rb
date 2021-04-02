@@ -33,6 +33,13 @@ end
 # Approach 2: Iterative
 #
 
+# Complexity Analysis
+#
+# Time complexity: we visit each node exactly once, thus the time complexity is O(N),
+# where N is the number of nodes, i.e. the size of tree.
+# Space complexity: depending on the tree structure, we could keep up to the entire tree,
+# therefore, the space complexity is O(N).
+
 def postorder(x)
   ans = []
 
