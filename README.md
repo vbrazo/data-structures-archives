@@ -305,7 +305,7 @@ However, you might have noticed that the time complexity of hash table has a str
 
 Most of us might have used an array in each bucket to store values in the same bucket. Ideally, the bucket size is small enough to be regarded as a constant. The time complexity of both insertion and search will be `O(1)`.
 
-But in the worst case, the maximum bucket size will be N. And the time complexity will be `O(1)` for insertion but `O(N)` for search.
+But in the worst case, the maximum bucket size will be `N`. And the time complexity will be `O(1)` for insertion but `O(N)` for search.
 
 #### The Principle of Built-in Hash Table
 
@@ -317,7 +317,7 @@ Each bucket contains an array to store all the values in the same bucket initial
 
 If there are too many values in the same bucket, these values will be maintained in a height-balanced binary search tree instead.
 
-The average time complexity of both insertion and search is still `O(1)`. And the time complexity in the worst case is `O(logN)` for both insertion and search by using height-balanced BST. It is a trade-off between insertion and search.
+The average time complexity of both insertion and search is still `O(1)`. And the time complexity in the worst case is `O(log N)` for both insertion and search by using height-balanced BST. It is a trade-off between insertion and search.
 
 #### Scenario I - Provide more information
 
