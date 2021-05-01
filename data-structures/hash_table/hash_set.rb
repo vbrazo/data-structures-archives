@@ -61,7 +61,6 @@ class MyHashSet
   end
 end
 
-# Your MyHashSet object will be instantiated and called as such:
 obj = MyHashSet.new
 
 obj.add(2)
