@@ -23,6 +23,7 @@ end
 
 def dfs(x)
   return if x.nil?
+
   x.children.each do |y|
     dfs(y)
   end
@@ -46,9 +47,9 @@ def postorder(x)
   # What will I save as a state?
   # - node
   # - pointer of a child for a next traversal
-  stack = [[x,0]]
+  stack = [[x, 0]]
 
-  while ! stack.empty?
+  until stack.empty?
     # Get current state.
     state = stack.last
     node = state[0]
@@ -60,7 +61,7 @@ def postorder(x)
       stack.pop
     else
       stack.last[1] += 1
-      stack.push([node.children[pointer],0])
+      stack.push([node.children[pointer], 0])
     end
   end
   ans
