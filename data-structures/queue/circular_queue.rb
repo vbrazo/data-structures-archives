@@ -78,7 +78,7 @@
 
 class MyCircularQueue
   def initialize(k)
-    @queue = [-1]*k
+    @queue = [-1] * k
     @size = k
     @num = 0
     @head = 0
