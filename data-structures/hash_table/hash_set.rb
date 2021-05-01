@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Design a HashSet without using any built-in hash table libraries.
 #
 # Implement MyHashSet class:
@@ -61,7 +63,6 @@ class MyHashSet
   end
 end
 
-# Your MyHashSet object will be instantiated and called as such:
 obj = MyHashSet.new
 
 obj.add(2)
