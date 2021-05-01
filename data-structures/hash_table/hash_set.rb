@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Design a HashSet without using any built-in hash table libraries.
 #
 # Implement MyHashSet class:
