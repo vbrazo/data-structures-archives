@@ -608,7 +608,7 @@ A binary tree can be traversed in preorder, inorder, postorder or level-order. A
 
 "Top-down" means that in each recursion level, we will visit the node first to come up with some values, and pass these values to its children when calling the function recursively.
 
-A typical "top-down" recursion function top_down(root, params) works like this:
+A typical "top-down" recursion function `top_down(root, params)` works like this:
 
 ```python
 # 1. return specific value for null node
@@ -622,7 +622,7 @@ A typical "top-down" recursion function top_down(root, params) works like this:
 
 "Bottom-up" means that in each recursion level, we will firstly call the functions recursively for all the children nodes and then come up with the answer according to the return values and the value of the root node itself.
 
-A typical "bottom-up" recursion function bottom_up(root) works like this:
+A typical "bottom-up" recursion function `bottom_up(root)` works like this:
 
 ```python
 # 1. return specific value for null node
