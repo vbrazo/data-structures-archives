@@ -136,7 +136,7 @@ queue.pop()         # 5
 print(queue)        # deque([4])
 ```
 
-The `append` and `popleft` operations above are more traditionally called enqueue and dequeue, so in the following questions we will frequently use the latter terminology. Along with pop and `appendleft`, these operations run in O(1) time.
+The `append` and `popleft` operations above are more traditionally called enqueue and dequeue, so in the following questions we will frequently use the latter terminology. Along with pop and `appendleft`, these operations run in `O(1)` time.
 
 When the most recent item examined is the most important, a stack is frequently a good choice. For this reason stacks often feature in depth-first search, backtracking, and syntax parsing applications.
 
@@ -572,19 +572,19 @@ Terminology used in trees:
 - Height of node - the number of edges on the longest path between that node and a leaf
 - Height of Tree - the height of its root node
 
-A height-balanced (or self-balancing) binary search tree is a binary search tree that automatically keeps its height small in the face of arbitrary item insertions and deletions. That is, the height of a balanced BST with N nodes is always log n. Also, the height of the two subtrees of every node never differs by more than 1.
+A height-balanced (or self-balancing) binary search tree is a binary search tree that automatically keeps its height small in the face of arbitrary item insertions and deletions. That is, the height of a balanced BST with N nodes is always `log n`. Also, the height of the two subtrees of every node never differs by more than 1.
 
-As we mentioned before, the height of a balanced BST with N nodes is always log N. We can calculate the total number of nodes and the height of the tree to determine if this BST is a height-balanced BST.
+As we mentioned before, the height of a balanced BST with N nodes is always `log N`. We can calculate the total number of nodes and the height of the tree to determine if this BST is a height-balanced BST.
 
 Also, in the definition, we mentioned a property of height-balanced BST: the depth of the two subtrees of every node never differ by more than 1. We can also validate the tree recursively according to this rule.
 
 #### Why Using a Height-Balanced BST
 
-We have introduced binary search tree and related operations, including search, insertion and deletion in the previous article. When we analyze the time complexity of these operations, it is worth noting that the height of the tree is the most important factor. Taking search operation as an example, if the height of the BST is h, the time complexity will be O(h). The height of the BST really matters.
+We have introduced binary search tree and related operations, including search, insertion and deletion in the previous article. When we analyze the time complexity of these operations, it is worth noting that the height of the tree is the most important factor. Taking search operation as an example, if the height of the BST is h, the time complexity will be `O(h)`. The height of the BST really matters.
 
-So let's discuss the relationship between the number of nodes N and the height of the tree h. For a height-balanced BST, as we discussed in the previous section, h >= log2n. But for a normal BST, in the worst case, it can degenerate into a chain.
+So let's discuss the relationship between the number of nodes `N` and the height of the tree `h`. For a height-balanced BST, as we discussed in the previous section, `h => log2N`. But for a normal BST, in the worst case, it can degenerate into a chain.
 
-Therefore, the height of a BST with N nodes can vary from logN to N. That is, the time complexity of search operation can vary from logN to N. It is a huge difference in the performance.
+Therefore, the height of a BST with `N` nodes can vary from `log N` to `N`. That is, the time complexity of search operation can vary from `log N` to `N`. It is a huge difference in the performance.
 
 Therefore, a height-balanced BST play an important role in improving the performance.
 
@@ -593,7 +593,7 @@ Therefore, a height-balanced BST play an important role in improving the perform
 There are several different implementations for height-balanced BSTs. The details of these implementations are different but they have similar goals:
 
 - The data structure should satisfy the binary search property and the height-balanced property.
-- The data structure should support the basic operations of BST, including search, insertion and deletion within O(log N) time even in worst case.
+- The data structure should support the basic operations of BST, including search, insertion and deletion within `O(log N)` time even in worst case.
 
 ## Tries
 
@@ -615,7 +615,7 @@ There are two main methods used with tries:
 - insert(word): add a word to the trie
 - find(word): check if a word or prefix exists in the trie
 
-Each one of these methods will run O(k), where k is the length of the word.
+Each one of these methods will run `O(k)`, where k is the length of the word.
 
 Tries can be implemented in several ways, but in an interview setting the simplest way is to use a nested dictionary, where each key maps to a dictionary whose keys are successive letters in a given word.
 
