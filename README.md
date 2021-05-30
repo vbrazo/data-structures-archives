@@ -564,6 +564,8 @@ The most common questions on binary search trees will ask you to search for elem
 
 ### Height-Balanced BST
 
+A height-balanced BST is a special form of BST which aims at improving the performance. It is useful to understand the general idea of a height-balanced BST and how height-balanced BSTs can help you in your algorithm designs.
+
 #### What is a Height-Balanced BST
 
 Terminology used in trees:
