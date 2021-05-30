@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Definition for a binary tree node.
 class TreeNode
   attr_accessor :val, :left, :right

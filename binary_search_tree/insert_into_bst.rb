@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Insert into a Binary Search Tree
 
 # You are given the root node of a binary search tree (BST) and a value to
