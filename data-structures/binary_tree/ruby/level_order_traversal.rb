@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Given a binary tree, return the level order traversal of its nodes' values.
 # (i.e: from left to right, level by level).
 
@@ -92,7 +94,7 @@ def level_order(root)
 
   arr = [root]
   order = [[root.val]]
-  while arr.size > 0
+  while arr.size.positive?
     width = arr.size
     temp = []
     (0...width).each do |_i|

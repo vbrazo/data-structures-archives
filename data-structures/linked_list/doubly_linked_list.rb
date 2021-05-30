@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DoublyLinkedList
   # Initialize the data structure here.
   attr_reader :head, :tail, :size

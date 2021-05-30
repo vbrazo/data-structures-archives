@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Given an array nums of integers, return how many of them contain an even number of digits.
 
 def find_numbers(nums)

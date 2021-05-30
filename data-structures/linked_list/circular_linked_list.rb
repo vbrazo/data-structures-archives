@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Define a node for the list
 class Node
   attr_accessor :value, :next
@@ -56,7 +58,7 @@ class CircularList
     end
     print ']'
 
-    puts(STDOUT.flush)
+    puts($stdout.flush)
   end
 
   def delete_head

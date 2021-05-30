@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Define a node in the list
 class Node
   # Initialize the data structure here.
@@ -50,7 +52,7 @@ class SinglyLinkedList
   end
 
   def print_list
-    puts '[' + to_a.join(', ') + ']'
+    puts "[#{to_a.join(', ')}]"
   end
 
   def delete_head

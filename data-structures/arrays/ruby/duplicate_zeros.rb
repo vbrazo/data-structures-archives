@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Given a fixed length array arr of integers, duplicate each occurrence of zero,
 # shifting the remaining elements to the right.
 
@@ -11,7 +13,7 @@ def duplicate_zeros(arr)
   arr2_index = 0
 
   arr.each do |value|
-    if value == 0
+    if value.zero?
       arr2[arr2_index] = 0
       arr2_index += 1
       arr2[arr2_index] = 0
@@ -53,7 +55,7 @@ duplicate_zeros([1, 2, 3])
 # Space Complexity: O(1). We do not use any extra space.
 
 def duplicate_zeros(arr)
-  zeros = arr.select { |n| n.zero? }.size
+  zeros = arr.select(&:zero?).size
 
   (arr.size - 1).downto(0) do |pointer|
     if arr[pointer].zero?
@@ -64,7 +66,7 @@ def duplicate_zeros(arr)
         arr[pointer + zeros] = arr[pointer]
       end
 
-      arr[pointer] = 0 if zeros > 0
+      arr[pointer] = 0 if zeros.positive?
     end
   end
   print("#{arr}\n")

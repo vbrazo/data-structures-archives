@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Given the root of an n-ary tree, return the postorder traversal of its nodes' values.
 
 # Nary-Tree input serialization is represented in their level order traversal.
