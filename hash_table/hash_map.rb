@@ -65,7 +65,7 @@ class MyHashMap
   end
 end
 
-obj = MyHashMap.new()
+obj = MyHashMap.new
 obj.put(1, 2)
 
 param_2 = obj.get(1)

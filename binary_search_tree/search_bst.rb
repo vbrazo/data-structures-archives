@@ -35,9 +35,7 @@ end
 # @param {Integer} val
 # @return {TreeNode}
 def search_bst(root, val)
-  if root.nil? || root.val == val
-    return root
-  end
+  return root if root.nil? || root.val == val
 
   if val < root.val
     search_bst(root.left, val)
@@ -71,7 +69,7 @@ end
 # @param {Integer} val
 # @return {TreeNode}
 def search_bst(root, val)
-  while !root.nil? and root.val != val
+  while !root.nil? && (root.val != val)
     if val < root.val
       root = root.left
     else

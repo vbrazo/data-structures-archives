@@ -21,7 +21,8 @@ class TreeNode
 
   def initialize(val)
     @val = val
-    @left, @right = nil, nil
+    @left = nil
+    @right = nil
   end
 end
 
@@ -50,18 +51,16 @@ def inorder_successor(root, p)
   if p.right
     curr = p.right
 
-    while curr.left
-      curr = curr.left
-    end
+    curr = curr.left while curr.left
 
     curr
   else
     # map all parents and grandparents of the given node
-    parent_map = {root.val => nil}
+    parent_map = { root.val => nil }
     curr = root
 
     while curr && curr != p
-      if(curr.val > p.val) # left sub tree
+      if curr.val > p.val # left sub tree
         parent_map[curr.left] = curr if curr.left
         curr = curr.left
       else
@@ -70,13 +69,11 @@ def inorder_successor(root, p)
       end
     end
 
-    return nil if !curr
+    return nil unless curr
 
     curr = parent_map[p]
 
-    while(curr && curr.val < p.val)
-      curr = parent_map[curr]
-    end
+    curr = parent_map[curr] while curr && curr.val < p.val
 
     curr
   end
