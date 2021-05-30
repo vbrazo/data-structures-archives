@@ -25,10 +25,59 @@ class TreeNode
   end
 end
 
+#
+# Approach 1: Recursion
+#
+
 # @param {TreeNode} root
 # @param {TreeNode} p
 # @return {TreeNode}
 def inorder_successor(root, p)
   root = root.right while root && root.val <= p.val
   root && inorder_successor(root.left, p) || root
+end
+
+#
+# Approach 2: Iterative
+#
+
+# @param {TreeNode} root
+# @param {TreeNode} p
+# @return {TreeNode}
+def inorder_successor(root, p)
+  return nil if !root || !p
+
+  if p.right
+    curr = p.right
+
+    while curr.left
+      curr = curr.left
+    end
+
+    curr
+  else
+    # map all parents and grandparents of the given node
+    parent_map = {root.val => nil}
+    curr = root
+
+    while curr && curr != p
+      if(curr.val > p.val) # left sub tree
+        parent_map[curr.left] = curr if curr.left
+        curr = curr.left
+      else
+        parent_map[curr.right] = curr if curr.right
+        curr = curr.right
+      end
+    end
+
+    return nil if !curr
+
+    curr = parent_map[p]
+
+    while(curr && curr.val < p.val)
+      curr = parent_map[curr]
+    end
+
+    curr
+  end
 end
