@@ -15,6 +15,10 @@ This is my personal data structures archives and it's where I store my data stru
       - [The Principle of Built-in Hash Table](#the-principle-of-built-in-hash-table)
   - [Trees](#trees)
   - [Binary Search Trees](#binary-search-trees)
+    - [Height-Balanced BST](#height-balanced-bst)
+      - [What is a Height-Balanced BST?](#what-is-a-height-balanced-bst)
+      - [Why Using a Height-Balanced BST?](#why-using-a-height-balanced-bst)
+      - [How to Implement a Height-Balanced BST?](#how-to-implement-a-height-balanced-bst)
   - [Tries](#tries)
   - [Heaps](#heaps)
   - [Graphs](#graphs)
@@ -557,6 +561,39 @@ The most common questions on binary search trees will ask you to search for elem
   - [In-order](data-structures/binary_tree/README.md)
   - [Post-order](data-structures/binary_tree/README.md)
   - [Pre-order](data-structures/binary_tree/README.md)
+
+### Height-Balanced BST
+
+#### What is a Height-Balanced BST
+
+Terminology used in trees:
+
+- Depth of node - the number of edges from the tree's root node to the node
+- Height of node - the number of edges on the longest path between that node and a leaf
+- Height of Tree - the height of its root node
+
+A height-balanced (or self-balancing) binary search tree is a binary search tree that automatically keeps its height small in the face of arbitrary item insertions and deletions. That is, the height of a balanced BST with N nodes is always log n. Also, the height of the two subtrees of every node never differs by more than 1.
+
+As we mentioned before, the height of a balanced BST with N nodes is always log N. We can calculate the total number of nodes and the height of the tree to determine if this BST is a height-balanced BST.
+
+Also, in the definition, we mentioned a property of height-balanced BST: the depth of the two subtrees of every node never differ by more than 1. We can also validate the tree recursively according to this rule.
+
+#### Why Using a Height-Balanced BST
+
+We have introduced binary search tree and related operations, including search, insertion and deletion in the previous article. When we analyze the time complexity of these operations, it is worth noting that the height of the tree is the most important factor. Taking search operation as an example, if the height of the BST is h, the time complexity will be O(h). The height of the BST really matters.
+
+So let's discuss the relationship between the number of nodes N and the height of the tree h. For a height-balanced BST, as we discussed in the previous section, h >= log2n. But for a normal BST, in the worst case, it can degenerate into a chain.
+
+Therefore, the height of a BST with N nodes can vary from logN to N. That is, the time complexity of search operation can vary from logN to N. It is a huge difference in the performance.
+
+Therefore, a height-balanced BST play an important role in improving the performance.
+
+#### How to Implement a Height-Balanced BST
+
+There are several different implementations for height-balanced BSTs. The details of these implementations are different but they have similar goals:
+
+- The data structure should satisfy the binary search property and the height-balanced property.
+- The data structure should support the basic operations of BST, including search, insertion and deletion within O(log N) time even in worst case.
 
 ## Tries
 
