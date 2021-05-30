@@ -23,9 +23,13 @@ This is my personal data structures archives and it's where I store my data stru
     - [Top-down solution](#top-down-solution)
     - [Bottom-up solution](#bottom-up-solution)
   - [Tries](#tries)
+    - [Performance of a Trie](#performance-of-a-trie)
+      - [Time complexity](#time-complexity)
+      - [Space complexity](#space-complexity)
     - [How to represent a Trie](#how-to-represent-a-trie)
       - [Array](#array)
-      - [Map](#map)
+      - [Hash Map](#hash-map)
+        - [Complexity Analysis Comparison](#complexity-analysis-comparison)
   - [Heaps](#heaps)
   - [Graphs](#graphs)
 
@@ -651,14 +655,15 @@ A trie is a kind of tree whose nodes typically represent string, where every des
 </pre>
 
 Following all paths from the root to each leaf spells out all the words that this trie contains, in this case "bear", "cat, "coast", and "dog".
+
 There are two main methods used with tries:
 
-- insert(word): add a word to the trie
-- find(word): check if a word or prefix exists in the trie
+- `insert(word)`: add a word to the trie.
+- `find(word)`: check if a word or prefix exists in the trie.
 
 One important property of Trie is that all the descendants of a node have a common prefix of the string associated with that node. That's why Trie is also called prefix tree.
 
-Each one of these methods will run `O(k)`, where k is the length of the word.
+Each one of these methods will run `O(k)`, where `k` is the length of the word.
 
 Tries can be implemented in several ways, but in an interview setting the simplest way is to use a nested dictionary, where each key maps to a dictionary whose keys are successive letters in a given word.
 
@@ -691,6 +696,26 @@ class Trie:
 
 Trie is widely used in various applications, such as autocomplete, spell checker, etc.
 
+### Performance of a Trie
+
+Let's discuss the complexity of this algorithm.
+
+### Time complexity
+
+If the longest length of the word is `N`, the height of Trie will be `N + 1`. Therefore, the time complexity of all insert, search and startsWith methods will be `O(N)`.
+
+### Space complexity
+
+If we have `M` words to insert in total and the length of words is at most N, there will be at most `M*N` nodes in the worst case (any two words don't have a common prefix).
+
+Let's assume that there are maximum `K` different characters (K is equal to 26 in this problem, but might differs in different cases). So each node will maintain a map whose size is at most K.
+
+Therefore, the space complexity will be `O(M*N*K)`.
+
+It seems that Trie is really space consuming, however, the real space complexity of Trie is much smaller than our estimation, especially when the distribution of words is dense.
+
+You can also implement it by the array which will achieve a slightly better time performance but a slightly lower space performance.
+
 ### How to represent a Trie
 
 #### Array
@@ -701,13 +726,31 @@ For instance, if we store strings which only contains letter a to z, we can decl
 
 It is really fast to visit a child node. It is comparatively easy to visit a specific child since we can easily transfer a character to an index in most cases. But not all children nodes are needed. So there might be some waste of space.
 
-#### Map
+#### Hash Map
 
 The second solution is to use a `hashmap` to store children nodes.
 
 We can declare a hashmap in each node. The key of the hashmap are characters and the value is the corresponding child node.
 
 It is even easier to visit a specific child directly by the corresponding character. But it might be a little slower than using an array. However, it saves some space since we only store the children nodes we need. It is also more flexible because we are not limited by a fixed length and fixed range.
+
+You might wonder why not use a hash table to store strings. Let's do a brief comparison between these two data structures. We assume there are N keys and the maximum length of a key is M.
+
+#### Complexity Analysis Comparison
+
+###### Time Complexity
+
+The time complexity to search in hash table is typically `O(1)`, but will be `O(log n)` in the worst time if there are too many collisions and we solve collisions using height-balanced BST.
+
+The time complexity to search in Trie is `O(M)`.
+
+The hash table wins in most cases.
+
+###### Space Complexity
+
+The space complexity of hash table is `O(M * N)`. If you want hash table to have the same function with Trie, you might need to store several copies of the key. For instance, you might want to store "a", "ap", "app", "appl" and also "apple" for a keyword "apple" in order to search by prefix. The space complexity can be even much larger in that case.
+
+The space complexity of Trie is `O(M * N)` as we estimated above. But actually far smaller than the estimation since there will be a lot of words have the similar prefix in real cases.
 
 ## Heaps
 
