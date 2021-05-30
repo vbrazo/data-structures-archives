@@ -49,7 +49,7 @@ end
 # Approach 1: Recursion
 #
 
-# The recursion implementation is very straightforward :
+# The recursion implementation is very straightforward:
 #
 # If root is null - return TreeNode(val).
 #
@@ -79,4 +79,45 @@ def insert_into_bst(root, val)
   end
 
   root
+end
+
+#
+# Approach 2: Iteration
+#
+
+# The recursion above could be converted into the iteration
+
+# Complexity Analysis
+
+# Time complexity: O(H), where H is a tree height. That results
+# in O(log N) in the average case, and O(N) in the worst case.
+
+# Space complexity: O(1) since it's a constant space solution.
+
+def insert_into_bst(root, val)
+  node = root
+
+  while node
+    # insert into the right subtree
+    if val > node.val
+      # insert right now
+      if not node.right
+        node.right = TreeNode.new(val)
+        return root
+      else
+        node = node.right
+      end
+    # insert into the left subtree
+    else
+      # insert right now
+      if not node.left
+        node.left = TreeNode.new(val)
+        return root
+      else
+        node = node.left
+      end
+    end
+  end
+
+  TreeNode.new(val)
 end
