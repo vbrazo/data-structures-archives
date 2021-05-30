@@ -580,7 +580,7 @@ Also, in the definition, we mentioned a property of height-balanced BST: the dep
 
 #### Why Using a Height-Balanced BST
 
-We have introduced binary search tree and related operations, including search, insertion and deletion in the previous article. When we analyze the time complexity of these operations, it is worth noting that the height of the tree is the most important factor. Taking search operation as an example, if the height of the BST is h, the time complexity will be `O(h)`. The height of the BST really matters.
+When we analyze the time complexity of search, insertion and deletion operations, it is worth noting that the height of the tree is the most important factor. Taking search operation as an example, if the height of the BST is `h`, the time complexity will be `O(h)`. The height of the BST really matters.
 
 So let's discuss the relationship between the number of nodes `N` and the height of the tree `h`. For a height-balanced BST, as we discussed in the previous section, `h => log2N`. But for a normal BST, in the worst case, it can degenerate into a chain.
 
