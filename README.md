@@ -23,6 +23,9 @@ This is my personal data structures archives and it's where I store my data stru
     - [Top-down solution](#top-down-solution)
     - [Bottom-up solution](#bottom-up-solution)
   - [Tries](#tries)
+    - [How to represent a Trie](#how-to-represent-a-trie)
+      - [Array](#array)
+      - [Map](#map)
   - [Heaps](#heaps)
   - [Graphs](#graphs)
 
@@ -633,6 +636,8 @@ A typical "bottom-up" recursion function `bottom_up(root)` works like this:
 
 ## Tries
 
+A `Trie` is a special form of a `Nary tree`. Typically, a trie is used to `store strings`. Each Trie node represents `a string` (`a prefix`). Each node might have several children nodes while the paths to different children nodes represent different characters. And the strings the child nodes represent will be the `origin string` represented by the node itself plus `the character on the path`.
+
 A trie is a kind of tree whose nodes typically represent string, where every descendant of a node shares a common prefix. For this reason tries are often referred to as prefix trees.
 
 <pre>
@@ -650,6 +655,8 @@ There are two main methods used with tries:
 
 - insert(word): add a word to the trie
 - find(word): check if a word or prefix exists in the trie
+
+One important property of Trie is that all the descendants of a node have a common prefix of the string associated with that node. That's why Trie is also called prefix tree.
 
 Each one of these methods will run `O(k)`, where k is the length of the word.
 
@@ -681,6 +688,26 @@ class Trie:
         return None
     return trie
 ```
+
+Trie is widely used in various applications, such as autocomplete, spell checker, etc.
+
+### How to represent a Trie
+
+#### Array
+
+The first solution is to use an `array` to store children nodes.
+
+For instance, if we store strings which only contains letter a to z, we can declare an array whose size is 26 in each node to store its children nodes. And for a specific character c, we can use c - 'a' as the index to find the corresponding child node in the array.
+
+It is really fast to visit a child node. It is comparatively easy to visit a specific child since we can easily transfer a character to an index in most cases. But not all children nodes are needed. So there might be some waste of space.
+
+#### Map
+
+The second solution is to use a `hashmap` to store children nodes.
+
+We can declare a hashmap in each node. The key of the hashmap are characters and the value is the corresponding child node.
+
+It is even easier to visit a specific child directly by the corresponding character. But it might be a little slower than using an array. However, it saves some space since we only store the children nodes we need. It is also more flexible because we are not limited by a fixed length and fixed range.
 
 ## Heaps
 
