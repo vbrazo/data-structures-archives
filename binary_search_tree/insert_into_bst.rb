@@ -101,21 +101,19 @@ def insert_into_bst(root, val)
     # insert into the right subtree
     if val > node.val
       # insert right now
-      if not node.right
+      if !node.right
         node.right = TreeNode.new(val)
         return root
       else
         node = node.right
       end
     # insert into the left subtree
-    else
+    elsif !node.left
       # insert right now
-      if not node.left
-        node.left = TreeNode.new(val)
-        return root
-      else
-        node = node.left
-      end
+      node.left = TreeNode.new(val)
+      return root
+    else
+      node = node.left
     end
   end
 
