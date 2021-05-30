@@ -19,6 +19,9 @@ This is my personal data structures archives and it's where I store my data stru
       - [What is a Height-Balanced BST?](#what-is-a-height-balanced-bst)
       - [Why Using a Height-Balanced BST?](#why-using-a-height-balanced-bst)
       - [How to Implement a Height-Balanced BST?](#how-to-implement-a-height-balanced-bst)
+  - [N-ary tree](#n-ary-tree)
+    - [Top-down solution](#top-down-solution)
+    - [Bottom-up solution](#bottom-up-solution)
   - [Tries](#tries)
   - [Heaps](#heaps)
   - [Graphs](#graphs)
@@ -596,6 +599,37 @@ There are several different implementations for height-balanced BSTs. The detail
 
 - The data structure should satisfy the binary search property and the height-balanced property.
 - The data structure should support the basic operations of BST, including search, insertion and deletion within `O(log N)` time even in worst case.
+
+## N-ary tree
+
+A binary tree can be traversed in preorder, inorder, postorder or level-order. Among these traversal methods, preorder, postorder and level-order traversal are suitable to be extended to an N-ary tree.
+
+### Top-down solution
+
+"Top-down" means that in each recursion level, we will visit the node first to come up with some values, and pass these values to its children when calling the function recursively.
+
+A typical "top-down" recursion function top_down(root, params) works like this:
+
+```python
+# 1. return specific value for null node
+# 2. update the answer if needed                              // answer <-- params
+# 3. for each child node root.children[k]:
+# 4.      ans[k] = top_down(root.children[k], new_params[k])  // new_params <-- root.val, params
+# 5. return the answer if needed                              // answer <-- all ans[k]
+```
+
+### Bottom-up solution
+
+"Bottom-up" means that in each recursion level, we will firstly call the functions recursively for all the children nodes and then come up with the answer according to the return values and the value of the root node itself.
+
+A typical "bottom-up" recursion function bottom_up(root) works like this:
+
+```python
+# 1. return specific value for null node
+# 2. for each child node root.children[k]:
+# 3.      ans[k] = bottom_up(root.children[k])    // call function recursively for all children
+# 4. return answer                                // answer <- root.val, all ans[k]
+```
 
 ## Tries
 
