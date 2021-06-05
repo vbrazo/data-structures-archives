@@ -19,7 +19,7 @@ This is my personal data structures archives and it's where I store my data stru
       - [What is a Height-Balanced BST?](#what-is-a-height-balanced-bst)
       - [Why Using a Height-Balanced BST?](#why-using-a-height-balanced-bst)
       - [How to Implement a Height-Balanced BST?](#how-to-implement-a-height-balanced-bst)
-  - [N-ary tree](#n-ary-tree)
+  - [N-ary Trees](#n-ary-trees)
     - [Top-down solution](#top-down-solution)
     - [Bottom-up solution](#bottom-up-solution)
   - [Tries](#tries)
@@ -607,7 +607,7 @@ There are several different implementations for height-balanced BSTs. The detail
 - The data structure should satisfy the binary search property and the height-balanced property.
 - The data structure should support the basic operations of BST, including search, insertion and deletion within `O(log N)` time even in worst case.
 
-## N-ary tree
+## N-ary Trees
 
 A binary tree can be traversed in preorder, inorder, postorder or level-order. Among these traversal methods, preorder, postorder and level-order traversal are suitable to be extended to an N-ary tree.
 
